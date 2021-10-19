@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',                      '6.0.3'
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'faker',                      '2.1.2'
 gem 'will_paginate',              '3.1.8'
 gem 'bootstrap-will_paginate',    '1.0.0'
@@ -24,6 +26,7 @@ group :development do
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.1.0'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'letter_opener_web'
 end
 
 group :test do
