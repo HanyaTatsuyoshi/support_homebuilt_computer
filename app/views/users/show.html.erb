@@ -1,2 +1,13 @@
-<% provide(:title, "構成一覧")
-<h1><%= @user.email %></h1>
+<% provide(:title, "構成一覧") %>
+
+<div id="users-show">
+  <article>
+    <% if @user.customs.any? %>
+      <h3>Customs (<%= @user.customs.count %>)</h3>
+      <ol class="customs">
+        <%= render @customs %>
+      </ol>
+      <%= will_paginate @customs %>
+    <% end %>
+  </article>
+</div>

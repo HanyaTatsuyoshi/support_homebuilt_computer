@@ -1,1 +1,1763 @@
-<h1>自作パソコンの必要パーツ＋選び方！</h1>
+<div class="row" id="toppages-index">
+  <div class="content">
+    <article class="main col-sm-10">
+      <p class="center"><%= image_tag 'pc.jpg', width: '100%', alt: "パソコン" %></p>
+      <p class="update-date">更新日 2022.01.01</p>
+      <h1>初心者向け！初めてでもわかる自作パソコン必要パーツ選び方</h1>
+      <div class="text">
+        <p>
+          自作パソコンに初めて挑戦する人に向けて、<span>パーツの選び方</span>と<span>押さえるべき最低限のポイント</span>をまとめました。
+          事前に<span>自作パソコンの目的</span>と<span>予算</span>を明確にしておくと、パーツ選びがスムーズになると思います。
+        </p>
+        <ul>
+          <span class="bold">例）利用目的</span>
+          <li>インターネット</li>
+          <li>オフィス</li>
+          <li>ゲーム</li>
+          <li>動画編集</li>
+          <li>トレード...</li>
+        </ul>
+      </div>
+      <div class="text">
+        <p><span class="gray">必須のソフト等ある場合は事前に動作環境を調べるのをおすすめします。</span></p>
+        <p>
+          基本的に<span>新品パーツ</span>で揃えることをおすすめします。
+          中古パーツを使うと、保証が受けられないのは勿論、動作不良時の原因究明が難しくなるなどデメリットが多くなります。
+        </p>
+        <p class="bold">
+          具体的なパーツ選びの際に、「
+          <%= link_to "価格ドットコム", "https://kakaku.com/pc/", target: :_blank, rel: "noopener noreferrer" %>
+          」の絞り込み機能がとても便利で私も利用しているのでおすすめです。
+        </p>
+        <div class="external">
+          <%= link_to "参考：【価格.com】パソコン", "https://kakaku.com/pc/", target: :_blank, rel: "noopener noreferrer" %>
+        </div>
+      </div>
+      <%= form_with(model: @custom, local: true, url: new_custom_path, method: :get) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        
+        <section id="section-cpu">
+          <div class="topic">
+            <h2>CPU選び方</h2>
+            <%= image_tag 'cpu.png', size: "100x100", alt: "cpu" %>
+          </div>
+          <p class="center"><%= image_tag 'cpu.jpg', width: '80%', alt: "CPU" %></p>
+          <div class="text">
+            <p>
+              CPUは、パソコンの頭脳にあたるパーツです。<br>
+              一番最初にCPUを決めることで他のパーツ選びがスムーズになります。
+            </p>
+            <p>
+              主なメーカーは<span>Intel(Coreシリーズ)</span>と<span>AMD(Ryzenシリーズ)</span>があります。
+              Intel(Coreシリーズ)のみに最適化されているソフトも一部ありますが、AMD(Ryzenシリーズ)を選んでも概ね問題ありません。
+            </p>
+          </div>
+          <div class="points">
+            <h3>用途にあったCPUを選ぶ</h3>
+            <div class="text">
+              <p class="underline">まずは<span>CPUのグレード</span>をもとにざっくりと必要な性能を把握しましょう！</p>
+            </div>
+            <div class="text">
+              <p class="bold">グレードの確認方法</p>
+              <p><%= image_tag 'cpu-grade.png', width: '100%', height: '100%', alt: "グレードの確認方法" %></p>
+              <p class="center bold gray">グレードの数字が大きいほど性能が高くなります。</p>
+            </div>
+            <div class="text">
+              <p class="bold">用途別グレード目安表</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>グレード</th>
+                    <th>用途</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Core i3、Ryzen 3</td>
+                    <td>WEB閲覧、動画視聴、メール、オフィス</td>
+                  </tr>
+                  <tr>
+                    <td>Core i5、Ryzen 5</td>
+                    <td>フルHD(60fps)3Dゲーム、画像編集</td>
+                  </tr>
+                  <tr>
+                    <td>Core i7、Ryzen 7</td>
+                    <td>フルHD(144fps)3Dゲーム、動画編集、本格的な画像編集</td>
+                  </tr>
+                  <tr>
+                    <td>Core i9、Ryzen 9</td>
+                    <td>4K3Dゲーム、本格的な動画編集</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text">
+              <p>
+                <span class="red">要注意！！</span><br>
+                CPUの<span>世代</span>によっては<br>
+                <span><span class="redline">旧世代Core i7(Ryzen 7) 低性能</span>　＜　<span class="blueline">新世代Core i3(Ryzen 3) 高性能</span></span><br>
+                ということが起きます。
+              </p>
+              <p class="underline">
+                最新世代CPUの発売が約1年前なら<span>1世代前のCPU</span>、<br>
+                数か月前なら<span>2世代前のCPU</span>を基準にするのがおすすめです。
+              </p>
+            </div>
+            <div class="text">
+              <p class="bold">世代の確認方法</p>
+              <P><%= image_tag 'cpu-generation.png', width: '100%', height: '100%', alt: "世代の確認方法" %></P>
+              <div class="flex">
+                <p class="half bold gray">Intelは「10」なら第10世代、「11」なら第11世代！</p>
+                <p class="half bold gray">AMDは数字が「3」と「4」が第3世代、「5」が第4世代になるので要注意！</p>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                CPUのグレード、世代の見立てがついたところで具体的なCPUの選定に入ります。<br>
+                私がいつも参考にしているサイトを紹介します。
+              </p>
+              <div class="external">
+                  <%= link_to "参考：CPU性能比較表 |PC自由帳", "https://pcfreebook.com/article/450856544.html",
+                              target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                ここからグレードと世代をもとにCPUの目星をつけ、<br>
+                下記の<span>「押さえるポイント」</span>を考慮して決定しましょう！
+              </p>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>押さえるポイント</h3>
+            <ol class="point">
+              <li>コア数・スレッド数</li>
+              <li>世代</li>
+              <li>内蔵グラフィック</li>
+            </ol>
+            
+            <div class="point-title">
+              <h4>1.コア数・スレッド数</h4>
+            </div>
+            <div class="text">
+              <p>
+                コア数とスレッド数は同時に処理できる作業単位です。<br>
+                CPUの性能に直結する部分なので、コア数・スレッド数は高いに越したことはないです。
+              </p>
+              <p>
+                特に<span>動画編集、配信等</span>するならこの数値が高いものを選ぶと良いです。<br>
+                たとえば<span>動画編集を行うなら6～8コア以上</span>を選ぶことをおすすめします。
+              </p>
+            </div>
+            
+            <div class="point-title">
+              <h4>2.世代</h4>
+            </div>
+            <div class="text">
+              <p>
+                世代とは、簡単にいうとCPUがいつ発売されたかです。<br>
+                なので<span>新しい世代のCPUを選ぶ</span>のが無難です。<br>
+                3～4世代以前のCPUは特別な理由がない限り避けるようにしましょう。
+              </p>
+              <p class="underline">今後<span>PCパーツの換装を視野に入れている場合</span>は、古い世代を選ぶと他パーツも交換の必要がてくるため<span>最新世代</span>をおすすめします。</p>
+            </div>
+            <div class="text">
+              <details><summary>世代の確認方法(再掲)</summary>
+                <P><%= image_tag 'cpu-generation.png', width: '100%', height: '100%', alt: "世代の確認方法" %></P>
+                <div class="flex">
+                  <p class="half bold gray">Intelは「10」なら第10世代、「11」なら第11世代！</p>
+                  <p class="half bold gray">AMDは数字が「3」と「4」が第3世代、「5」が第4世代になるので要注意！</p>
+                </div>
+              </details>
+            </div>
+            
+            <div class="point-title">
+              <h4>3.内蔵グラフィック</h4>
+            </div>
+            <div class="text">
+              <p>
+                CPUには内蔵グラフィック(映像を映す機能)搭載モデルと非搭載モデルがあります。<br>
+                <span>グラフィックボード(映像を映すためのパーツ)無しの場合</span>には、必ず内蔵グラフィック搭載モデルのCPUが必要になります。
+              </p>
+              <p>
+                <ul>
+                  <span class="bold">例）グラフィックボードが必要な用途</span>
+                  <li>3Dゲーム</li>
+                  <li>動画・画像編集</li>
+                  <li>マイニング...</li>
+                </ul>
+              </p>
+              <p>内蔵グラフィックの有無は<span>サフィックス(末尾の英字)</span>で確認できます</p>
+            </div>
+            <div class="text">
+              <p class="bold">内蔵グラフィックの確認方法</p>
+              <p><%= image_tag 'cpu-suffix.png', width: '100%', height: '100%', alt: "内蔵グラフィックの確認方法" %></p>
+              <div class="flex">
+                <p class="half bold gray">Intel<br>
+                                          無印：内蔵グラフィック有<br>
+                                          F：内蔵グラフィック無</p>
+                <p class="half bold gray">AMD<br>
+                                          無印：内蔵グラフィック無<br>
+                                          G：内蔵グラフィック有</p>
+              </div>
+            </div>
+            <div class="text">
+              <p>とくにこだわりが無ければ、</p>
+              <p class="underline">
+                グラフィックボード無しの場合、<span>Intelなら無印</span>、
+                <span>AMDならGモデル(内臓グラフィック有)</span><br>
+                グラフィックボード有りの場合、<span>Intelなら無印</span>、
+                <span>AMDなら無印 or Gモデル</span>　を選びましょう。
+              </p>
+            </div>
+            <div class="text">
+              <details><summary>サフィックスの仕様一覧</summary>
+                <div class="flex">
+                  <div class="half">
+                    <p>Intel</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>末尾</th>
+                          <th>仕様</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>無印</td>
+                          <td>通常モデル</td>
+                        </tr>
+                        <tr>
+                          <td class="center">K</td>
+                          <td>オーバークロックモデル<br>
+                              CPUクーラー付属なし<br>
+                              <span class="bold underline">CPUクーラー必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">F</td>
+                          <td>CPU内蔵グラフィック非搭載モデル<br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">KF</td>
+                          <td>KとFの統合モデル<br>
+                              オーバークロック可<br>
+                              CPUクーラー付属なし<br>
+                              内蔵グラフィック非搭載<br>
+                              <span class="bold underline">CPUクーラー必須</span><br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">X<br>XE</td>
+                          <td>コア数UPモデル<br>
+                              オーバークロック可<br>
+                              CPUクーラー付属なし<br>
+                              <span class="bold underline">CPUクーラー必須</span><br>
+                              <span class="bold gray">※ソケット、チップセットが変わるため要注意</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">S</td>
+                          <td>省電力モデル</td>
+                        </tr>
+                        <tr>
+                          <td class="center">T</td>
+                          <td>超省電力モデル</td>
+                        </tr>
+                        <tr>
+                          <td class="center">M<br>U<br>H<br>HK</td>
+                          <td>モバイル(ノートパソコン)向けCPU</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="half">
+                    <p>AMD</p>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>末尾</th>
+                          <th>仕様</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>無印</td>
+                          <td>通常モデル<br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">G</td>
+                          <td>内臓グラフィック搭載モデル</td>
+                        </tr>
+                        <tr>
+                          <td class="center">X</td>
+                          <td>ベースクロックUPモデル<br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">XT</td>
+                          <td>ベース・ブーストクロックUPモデル<br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">WX</td>
+                          <td>最上位モデル<br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">E</td>
+                          <td>省電力モデル<br>
+                              <span class="bold underline">グラフィックボード必須</span></td>
+                        </tr>
+                        <tr>
+                          <td class="center">H<br>HS<br>U</td>
+                          <td>モバイル(ノートパソコン)向けCPU</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="bold gray">※AMD製CPUは内蔵グラフィック非搭載が標準となります。一部上位モデルはCPUクーラーが付属していません。</p>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="topic">
+            <h2>選んだ自作PCパーツを保存</h2>
+          </div>
+          <div class="text">
+            <p>アカウント登録することで自作PCの構成パーツを保存していつでも確認できます。</p>
+            <p class="center"><%= link_to "アカウント登録", new_user_registration_path, class: "outline" %></p>
+            <p>ログインした状態で下の欄に入力して、ページ最下部の「確認画面へ進む」から保存ができます。</p>
+            <p class="gray">※空欄のままでも保存できます。保存した構成は後から編集できます。</p>
+          </div>
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">CPU スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :cpu, placeholder: "例：Intel Core i7-11700", list: "cpu-list" %>
+                  <datalist id="cpu-list">
+                    <option value="Intel Core i9">
+                    <option value="Intel Core i7">
+                    <option value="Intel Core i5">
+                    <option value="Intel Core i3">
+                    <option value="AMD Ryzen 9">
+                    <option value="AMD Ryzen 7">
+                    <option value="AMD Ryzen 5">
+                    <option value="AMD Ryzen 3">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :cpu_url %></td>
+                <td><%= f.number_field :cpu_price, value: 0, class: 'price', id: "cpu_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-cooler">
+          <div class="topic">
+            <h2>CPUクーラー選び方</h2>
+            <%= image_tag 'cooler.png', size: "130x100", alt: "cpu cooler" %>
+          </div>
+          <p class="center"><%= image_tag 'cooler.jpg', width: '80%', alt: "CPUクーラー" %></p>
+          <div class="text">
+            <p>
+              CPUクーラーは、CPUを冷やすためのパーツです。<br>
+              <span>多くのCPUには純正クーラー(リテールクーラー)が標準で付属しています。</span><br>
+              <span class="gray">一部のCPUには付属していません。詳細は「CPU選び方 > 押さえるポイント > 3.内臓グラフィック」の「サフィックスの仕様一覧」をご参照ください。</span>
+            </p>
+            <p>
+              また、CPUクーラーには<span>空冷式</span>と<span>水冷式</span>の2つの冷却方式があります。<br>
+              ここでいう水冷式とは<span>"簡易水冷"</span>を指します。<br>
+              <span class="gray">※本格水冷は初心者向けではないためここでは触れません。</span>
+            </p>
+          </div>
+          <div class="points">
+            <h3>CPUクーラーは買わなきゃダメ？</h3>
+            <div class="text">
+              <p>
+                高負荷の作業、冷房設備の無い使用環境等でなければ、<br>
+                <span class="underline">基本的には付属の純正クーラーで十分です。</span>
+              </p>
+              <p class="bold">CPUにCPUクーラーが付属してない場合には必ず用意しましょう。</p>
+            </div>
+            <div class="text">
+              <P>
+                CPUクーラーは後述の<span>「押さえるポイント」</span>さえ考慮すれば機能します。<br>
+                あとはどこまでこだわるかの話になるため、それぞれの好みになります。
+              </p>
+            </div>
+            <div class="text">
+              <p class="bold">参考：空冷式と水冷式のメリット・デメリット</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>メリット</th>
+                    <th>デメリット</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>空冷式</th>
+                    <td>・安価<br>
+                        ・取り付けが容易</td>
+                    <td>・適切なエアフローが必要<br>
+                        ・メモリと干渉する場合がある</td>
+                  </tr>
+                  <tr>
+                    <th>水冷式</th>
+                    <td>・エアフローが無くても冷える<br>
+                        ・メモリとの干渉はほとんどない</td>
+                    <td>・高価<br>
+                        ・取り付け工数が多い<br>
+                        ・初期不良、故障のリスクが高い</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text">
+              <p class="underline">初めての場合は<span>空冷式</span>をおすすめします。</p>
+              <p>また、<span>CPUグリスも単品で買う</span>とより冷やすことができます。</p>
+            </div>
+          </div>
+          <div class="points">
+            <h3>押さえるポイント</h3>
+            <ol class="point">
+              <li>対応ソケット</li>
+              <li>サイズ</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.対応ソケット</h4>
+            </div>
+            <div class="text">
+              <p>
+                ソケットはCPU取り付け部分の形状のことです。<br>
+                CPUクーラーもソケットに適合する必要があります。
+              </p>
+              <p class="bold">CPUは世代ごとにソケットが決まっています。</p>
+              <p class="underline">CPUのソケットが、<span>CPUクーラーの対応ソケットの欄に記載があるか</span>確認しましょう。</p>
+            </div>
+            <div class="text">
+              <p class="bold">CPU世代・ソケット対応表</p>
+              <div class="flex">
+                <div class="half">
+                  <p>Intel</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>世代</th>
+                        <th>ソケット</th>
+                        <th>アーキテクチャ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>第10世代<br>Xモデル<br>(末尾がX,XE)</td>
+                        <td>LGA2066</td>
+                        <td>Cascade Lake-X</td>
+                      </tr>
+                      <tr>
+                        <td>第9世代<br>Xモデル</td>
+                        <td>LGA2066</td>
+                        <td>Skylake-X Refresh</td>
+                      </tr>
+                      <tr>
+                        <td>第7世代<br>Xモデル</td>
+                        <td>LGA2066</td>
+                        <td>Kaby Lake-X,<br>Skylake-X</td>
+                      </tr>
+                      <tr>
+                        <td>第12世代</td>
+                        <td>LGA1700</td>
+                        <td>Alder Lake</td>
+                      </tr>
+                      <tr>
+                        <td>第11世代</td>
+                        <td>LGA1200</td>
+                        <td>Rocket Lake-S</td>
+                      </tr>
+                      <tr>
+                        <td>第10世代</td>
+                        <td>LGA1200</td>
+                        <td>Comet Lake-S</td>
+                      </tr>
+                      <tr>
+                        <td>第9世代</td>
+                        <td>LGA1151v2</td>
+                        <td>Coffee Lake-S</td>
+                      </tr>
+                      <tr>
+                        <td>第8世代</td>
+                        <td>LGA1151v2</td>
+                        <td>Coffee Lake-S</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="half">
+                  <p>AMD</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>世代</th>
+                        <th>ソケット</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>第4世代</td>
+                        <td>Socket AM4</td>
+                      </tr>
+                      <tr>
+                        <td>第3世代</td>
+                        <td>Socket AM4</td>
+                      </tr>
+                      <tr>
+                        <td>第2世代</td>
+                        <td>Socket AM4</td>
+                      </tr>
+                      <tr>
+                        <td>第1世代</td>
+                        <td>Socket AM4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <p class="gray">アーキテクチャ名でCPUを分類することがあるため記載しておきます。</p>
+            </div>
+            <div class="point-title">
+              <h4>2.サイズ</h4>
+            </div>
+            <div class="text">
+              <p>
+                大きいサイズのCPUクーラーでは、PCケースのサイドパネルが閉まらないことがあります。<br>
+                多くのPCケースには<span>対応するCPUクーラーの高さが記載されています。</span><br>
+                大きなヒートシンクを持つ<span>メモリも干渉に気をつけましょう。</span>
+              </p>
+              <p><span>水冷式では、PCケースの対応ラジエーターサイズ</span>も確認しておきましょう。</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">CPUクーラー スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :cooler, placeholder: "例：空冷式 商品名", list: "cooler-list" %>
+                  <datalist id="cooler-list">
+                    <option value="空冷式">
+                    <option value="水冷式">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :cooler_url %></td>
+                <td><%= f.number_field :cooler_price, value: 0, class: 'price', id: "cooler_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-gpu">
+          <div class="topic">
+            <h2>グラフィックボード選び方</h2>
+            <%= image_tag 'gpu.png', size: "200x100", alt: "gpu" %>
+          </div>
+          <p class="center"><%= image_tag 'gpu.jpg', width: '80%', alt: "GPU" %></p>
+          <div class="text">
+            <p>
+              グラフィックボードは、映像を映すためのパーツです。<br>
+              グラフィックボードは<span>グラボ、ビデオカード、GPU</span>とも呼ばれます。<br>
+              <span class="gray">※明確にはGPUは、グラフィックボードの搭載チップを指します。</span><br>
+              搭載チップの主なメーカーは<span>NVIDIA(GeForce)</span>と<span>AMD(Radeon)</span>があります。
+            </p>
+            <p class="underline">性能は、<span>PCパーツメーカーの違いで大差はない</span>ため、搭載チップで選ぶようにしましょう。</p>
+            <p>
+              大まかに分けると、<span>NVIDIAはゲーム向け、AMDはそれ以外</span>に向いてるといえます。<br>
+              <span class="gray">シェア率的に、ゲーム以外の用途でNVIDIAを選んでも問題ありませんが、ゲーム用途でAMDはおすすめしません。</span>
+            </p>
+          </div>
+          <div class="points">
+            <h3>グラフィックボードの性能引き出せてないかも...</h3>
+            <div class="text">
+              <p>前提として、<span>CPUが内臓グラフィック搭載モデルであれば、グラフィックボード無しでパソコンは動作します。</span></p>
+              <p>下記のような時にはグラフィックボードが必要になります。</p>
+              <p>
+                <ul>
+                  <span class="bold">例）グラフィックボードが必要な用途</span>
+                  <li>3Dゲーム</li>
+                  <li>動画・画像編集</li>
+                  <li>マイニング...</li>
+                </ul>
+              </p>
+              <p>
+                グラフィックボードは何をしたいかによって要求スペックが大きく変わってくるため、<br>
+                <span>例）「ゲーム名 推奨スペック」</span> などと調べてみましょう。<br>
+                <span class="gray">少なくとも推奨スペック以上を選びましょう。</span>
+              </p>
+              <p>
+                グラフィックボードの名前を参考サイトと照らし合わせることで、<span>必要なスペックとそれに近い製品</span>がわかるはずです。<br>
+                私がグラフィックボード選びで参考にしているサイトを紹介します。
+              </p>
+              <div class="external">
+                <%= link_to "参考：GPU性能比較表 |PC自由帳", "https://pcfreebook.com/article/459993300.html",
+                            target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                <span class="red">要注意！！</span><br>
+                CPUとGPUの片方の性能だけ高くても、<span>ボトルネック</span>と呼ばれる問題が生まれます！<br>
+                <span><span class="redline">低性能CPU + 高性能GPU(パフォーマンス低)</span>　＜　<span class="blueline">中性能CPU + 中性能GPU(パフォーマンス高)</span></span>
+              </p>
+              <p>
+                グラフィックボードを使用する環境では、<span>CPUとグラフィックボードのバランス</span>が大事です。<br>
+                あくまでも参考ですが、下記のようなサイトで簡単にボトルネックを調べることができます。
+              </p>
+              <div class="external">
+                <%= link_to "参考：ボトルネックチェッカー", "https://bablishe.com/cpu-gpu-bottleneck-checker/#bottle_neck_checker",
+                            target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </div>
+          </div>
+          <div class="points">
+            <h3>押さえるポイント</h3>
+            <ol class="point">
+              <li>サイズ</li>
+              <li>補助電源</li>
+              <li>映像出力端子</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.サイズ</h4>
+            </div>
+            <div class="text">
+              <p>
+                大きいサイズのグラフィックボードでは、PCケースに入らないことがあります。<br>
+                多くのPCケースには<span>対応するグラフィックボードの長さが記載されています。</span><br>
+                グラフィックボード<span>取付位置の下のPCIeスロットが使えなくなる</span>こともよくあります。
+              </p>
+            </div>
+            <div class="point-title">
+              <h4>2.補助電源</h4>
+            </div>
+            <div class="text">
+              <p>
+                多くのグラフィックボードで、電源ユニットからの補助電源が必要になります。<br>
+                補助電源(PCIeコネクタ)には<span>6ピン</span>と<span>8ピン(6+2ピン)</span>があります。
+              </p>
+              <p class="underline">電源ユニットに必要な補助電源(PCIeコネクタ)があるか確認しましょう。</p>
+            </div>
+            <div class="point-title">
+              <h4>3.映像出力端子</h4>
+            </div>
+            <div class="text">
+              <p>
+                グラフィックボードの映像出力端子は、<span>DVI、HDMI、DisplayPort</span>の3つが主流でしたが、<br>
+                <span>最近はDVI端子が非搭載の傾向にあります。</span><br>
+                モニターも同じ傾向にあるため、<span>古いモニターを使う場合は要注意です。</span>
+              </p>
+              <p class="underline">同じ端子があるか、<span>グラフィックボード、モニター、ケーブル</span>合わせて確認しましょう！</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">グラフィックボード スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :gpu, placeholder: "例：RTX3060", list: "gpu-list" %>
+                  <datalist id="gpu-list">
+                    <option value="RTX">
+                    <option value="GTX">
+                    <option value="RX">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :gpu_url %></td>
+                <td><%= f.number_field :gpu_price, value: 0, class: 'price', id: "gpu_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-memory">
+          <div class="topic">
+            <h2>メモリ選び方</h2>
+            <%= image_tag 'memory.png', size: "200x75", alt: "memory" %>
+          </div>
+          <p class="center"><%= image_tag 'memory.jpg', width: '80%', alt: "メモリ" %></p>
+          <div class="text">
+            <p>
+              メモリ(RAM)は、実行中のデータを一時的に記憶するパーツです。<br>
+              メモリの容量が増えれば、<span>多くの作業が同時にできる</span>ようになります。
+            </p>
+          </div>
+          
+          <div class="points">
+            <h3>メモリは2枚セットで買おう</h3>
+            <div class="text">
+              <p>
+                メモリは容量が少ないとボトルネックとなり、全体性能の低下につながるる大事なパーツです。<br>
+                そのため、用途に合わせた必要なメモリ容量を把握しましょう。
+              </p>
+              <p class="bold">用途別メモリ容量目安</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>容量</th>
+                    <th>用途</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>8GB</td>
+                    <td>WEB閲覧、オフィス</td>
+                  </tr>
+                  <tr>
+                    <td>16GB</td>
+                    <td>3Dゲーム、簡単な画像・動画編集</td>
+                  </tr>
+                  <tr>
+                    <td>32GB以上</td>
+                    <td>本格的な画像・動画編集</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text">
+              <p><span>要求するメモリ容量は年々増加している</span>ため、長期利用を考えている場合は<span>多め</span>に買っておくと安心です。</p>
+              <p>現在ほとんどのマザーボード(メモリを載せる基板)では<span>メモリ2枚セットで最大パフォーマンスを発揮できる</span>ようになっています。メモリを買うときは2枚セットで買うようにしましょう。</p>
+              <p class="underline">例）必要容量が16GBなら8GBメモリ2枚セットを買いましょう。</p>
+              <p class="gray">ハイエンドモデルでは4枚セットで性能を発揮するタイプもあります。</p>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>押さえるポイント</h3>
+            <ol class="point">
+              <li>メモリインターフェイス</li>
+              <li>メモリ規格</li>
+              <li>電圧</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.メモリインターフェイス</h4>
+            </div>
+            <div class="text">
+              <p>
+                メモリインターフェイスとはメモリ形状のことです。<br>
+                主に<span>DIMM</span>と<span>S.O.DIMM</span>と呼ばれる2種類があります。
+              </p>
+              <p>「S.O.DIMM」はノートパソコン用</p>
+              <p class="underline"><span>「DIMM」はデスクトップパソコン用</span>　←こっちを選ぼう！</p>
+            </div>
+            
+            <div class="point-title">
+              <h4>2.メモリ規格</h4>
+            </div>
+            <div class="text">
+              <p>メモリ規格はCPUでいう世代のようなもので、<span>マザーボードの対応が必須</span>になります。</p>
+              <p class="underline">少し前までは<span>DRR4一択</span>でしたが、最新の「DDR5」が発売されたため徐々に移行していくと思われます。</p>
+              <p>暫くの間は市場にDDR4とDDR5が混在することになるため、対応メモリに注意して選びましょう。</p>
+            </div>
+            
+            <div class="point-title">
+              <h4>3.電圧</h4>
+            </div>
+            <div class="text">
+              <p>メモリは電圧によって、標準品かメーカー独自仕様の製品かがわかります。</p>
+              <p class="underline">・DDR4 標準電圧 <span>1.2V</span></p>
+              <p class="underline">・DDR5 標準電圧 <span>1.1V</span></p>
+              <p>上記の標準品以外は安定動作しないこともあるので避けるようにしましょう。</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">メモリ スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :memory, placeholder: "例：DIMM DDR4-2666 8GB 2枚", list: "memory-list" %>
+                  <datalist id="memory-list">
+                    <option value="DIMM DDR4 4GB 2枚">
+                    <option value="DIMM DDR4 8GB 2枚">
+                    <option value="DIMM DDR4 16GB 2枚">
+                    <option value="DIMM DDR4 32GB 2枚">
+                    <option value="DIMM DDR5 8GB 2枚">
+                    <option value="DIMM DDR5 16GB 2枚">
+                    <option value="DIMM DDR5 32GB 2枚">
+                    <option value="DIMM DDR5 64GB 2枚">
+                    <option value="DIMM DDR5 128GB 2枚">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :memory_url %></td>
+                <td><%= f.number_field :memory_price, value: 0, class: 'price', id: "memory_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-storage">
+          <div class="topic">
+            <h2>ストレージ選び方</h2>
+            <%= image_tag 'hdd.png', size: "80x100", alt: "hdd" %>
+            <%= image_tag 'ssd.png', size: "150x100", alt: "2.5インチssd" %>
+            <%= image_tag 'm2.png', size: "150x50", alt: "m.2ssd" %>
+          </div>
+          <p class="center">
+            <%= image_tag 'hdd.jpg', width: '30%', alt: "HDD" %>
+            <%= image_tag 'ssd.jpg', width: '30%', alt: "2.5インチ SSD" %>
+            <%= image_tag 'm2.jpg', width: '30%', alt: "M.2 SSD" %>
+          </p>
+          <p></p>
+          <p></p>
+          <div class="text">
+            <p>ストレージは、データを長期的に保存するパーツの総称です。</p>
+            <p>
+              主に<span>HDD</span>、<span>2.5インチSSD</span>、<span>M.2 SSD</span>の3種類あります。<br>
+              ※「SSD」を「2.5インチSSD」と「M.2 SSD」として分けて説明しています。<br>
+              <span class="gray">ここでは内臓ストレージについてのみ説明します。</span>
+          </p>
+          </div>
+          
+          <div class="points">
+            <h3>バランスのとれた構成を見つける</h3>
+            <div class="text">
+              <p>それぞれの特徴を把握して使い分けすることで、高いパフォーマンスを発揮しながらコストを抑えられます。</p>
+            </div>
+            <div class="text">
+              <p class="bold">ストレージ種類ごとの特徴</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>HDD</th>
+                    <th>2.5インチSSD</th>
+                    <th>M.2 SSD (NVMe)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>価格</th>
+                    <td>安価</td>
+                    <td>M.2より若干安価</td>
+                    <td>高価</td>
+                  </tr>
+                  <tr>
+                    <th>転送速度(性能)</th>
+                    <td>低速</td>
+                    <td>M.2より若干低速</td>
+                    <td>高速</td>
+                  </tr>
+                  <tr>
+                    <th>耐久性</th>
+                    <td>衝撃に弱い</td>
+                    <td>衝撃に強い</td>
+                    <td>衝撃に強い</td>
+                  </tr>
+                  <tr>
+                    <th>寿命</th>
+                    <td>約3年</td>
+                    <td>約5年</td>
+                    <td>約5年</td>
+                  </tr>
+                  <tr>
+                    <th>静音性</th>
+                    <td>駆動音が大きい</td>
+                    <td>駆動音なし</td>
+                    <td>駆動音なし</td>
+                  </tr>
+                  <tr>
+                    <th>取付け</th>
+                    <td>3.5インチベイ<br>配線が必要</td>
+                    <td>2.5インチベイ<br>配線が必要</td>
+                    <td>M.2スロット<br>配線なし</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text">
+              <p>上記のような特徴から、</p>
+              <p class="bold">・「M.2 SSD」「2.5インチSSD」はOS、アプリ、ゲームの保存</p>
+              <p class="bold">・「HDD」は大量の動画、音楽、画像の保存</p>
+              <p>に適しているといえます。</p>
+            </div>
+            <div class="text">
+              <p class="bold">ストレージ構成例</p>
+              <div>
+                <ul>
+                  <span class="bold">WEB閲覧、オフィス用</span>
+                  <li>「2.5インチSSD」500GB</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <span class="bold">ゲーム用</span>
+                  <li>「M.2 SSD」500GB + 「HDD」1TB</li>
+                  <li>「2.5インチSSD」1TB</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <span class="bold">動画・画像編集用</span>
+                  <li>「M.2 SSD」500GB + 「2.5インチSSD」2TB</li>
+                  <li>「M.2 SSD」1TB + 「HDD」2TB</li>
+                </ul>
+              </div>
+            </div>
+            <div class="text">
+              <p>「2.5インチSSD」「M.2 SSD」は<span>NANDタイプ</span>で分けられ、主に<span>SLC、MLC、TLC、QLC</span>の4種類あります。</p>
+              <p><%= image_tag 'ssd-nand-type.png', width: '100%', height: '100%', alt: "SSD NANDタイプ" %></p>
+              <p class="underline">一般的な使い方なら<span>TLCタイプ</span>を選べばOKです。</p>
+              <p>NANDタイプに<span>「3D」の表記があるものは、信頼性UPモデル</span>と思っておけば大丈夫です。</p>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>HDD選びポイント</h3>
+            <ol class="point">
+              <li>インチ</li>
+              <li>接続インターフェイス</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.規格サイズ</h4>
+            </div>
+            <div class="text">
+              <p>規格サイズはHDDの種類で、主に<span>3.5インチ、2.5インチ</span>があります。</p>
+              <p class="underline"><span>デスクトップパソコン用は「3.5インチ」のHDD</span>なので、他を買わないように注意しましょう。</p>
+            </div>
+            <div class="point-title">
+              <h4>2.接続インターフェイス</h4>
+            </div>
+            <div class="text">
+              <P>接続インターフェイスは、HDDとマザーボードを接続する方法のことです。</P>
+              <p class="underline">HDDは、2.5インチSSDと同じく<span>Serial ATA 6Gb/s (SATA 3.0)</span>一択です。</p>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>2.5インチSSD選びポイント</h3>
+            <ol class="point">
+              <li>規格サイズ</li>
+              <li>接続インターフェイス</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.規格サイズ</h4>
+            </div>
+            <div class="text">
+              <p>
+                規格サイズはSSDの種類で、「2.5インチ」と「M.2」があります。<br>
+                ここでは「2.5インチ」のみ説明します。「M.2」に関してはさらに細かく分かれるため、次で説明します。
+              </p>
+            </div>
+            <div class="point-title">
+              <h4>2.接続インターフェイス</h4>
+            </div>
+            <div class="text">
+              <P>接続インターフェイスは、2.5インチSSDとマザーボードを接続する方法のことです。</P>
+              <P class="underline">2.5インチSSDの接続インターフェイスは、HDDと同じく<span>Serial ATA 6Gb/s (SATA 3.0)</span>一択です。</P>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>M.2 SSD 選びポイント</h3>
+            <ol class="point">
+              <li>規格サイズ</li>
+              <li>通信規格</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.規格サイズ</h4>
+            </div>
+            <div class="text">
+              <p>規格サイズはSSDの種類で、「2.5インチ」と「M.2」があります。</p>
+              <p>
+                M.2 SSDは、<span>Type2242</span>、<span>Type2260</span>、<span>Type2280</span>、<span>Type22110</span>の4タイプに分かれ、<br>
+                数字がそのままM.2 SSDのサイズを表しています。<span class="gray">Type2280 では 22x80(mm)</span><br>
+                現在ほとんどのM.2 SSDで「Type2280」が採用されています。
+              </p>
+              <p class="underline"><span>「Type2280」のM.2 SSD</span>を選べば、マザーボードでもほとんどが対応しています。</p>
+            </div>
+            <div class="point-title">
+              <h4>2.通信規格</h4>
+            </div>
+            <div class="text">
+              <p>
+                M.2 SSDの通信規格には、<span>Serial ATA 6Gb/s (SATA3.0)</span>と<span>NVMe(PCIe3.0、PCIe4.0)</span>があります。<br>
+                <span class="gray">※接続インターフェイスとして、通信規格が表記されていることもあります。<br>
+                　厳密には接続インターフェイスは「M.2」です。</span>
+              </p>
+              <p>「Serial ATA 6Gb/s」のM.2 SSDは、2.5インチSSDと転送速度が同じです。</p>
+              <p class="underline">
+                せっかくM.2 SSDを搭載するなら、転送速度の速い<span>「NVMe(PCIe3.0、PCIe4.0)」</span>を選びましょう。<br>
+                NVMeは<span>「PCIe3.0」と「PCIe4.0」で互換性がある</span>ので、どちらでも問題なく使用できます。
+              </p>
+              <p>性能を十分に発揮したい場合は、「CPU」「マザーボード」「M.2 SSD」全てで「PCIe4.0」対応製品を選びましょう。</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">M.2 SSD スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :m2, placeholder: "例：500GB M.2(Type2280) NVMe PCIe3.0", list: "m2-list" %>
+                  <datalist id="m2-list">
+                    <option value=" GB M.2(Type2280) NVMe PCIe3.0">
+                    <option value=" GB M.2(Type2280) NVMe PCIe4.0">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :m2_url %></td>
+                <td><%= f.number_field :m2_price, value: 0, class: 'price', id: "m2_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">2.5インチSSD スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :ssd, placeholder: "例：500GB TLC", list: "ssd-list" %>
+                  <datalist id="ssd-list">
+                    <option value=" GB TLC">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :ssd_url %></td>
+                <td><%= f.number_field :ssd_price, value: 0, class: 'price', id: "ssd_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">HDD スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :hdd, placeholder: "例：2TB", list: "hdd-list" %>
+                  <datalist id="hdd-list">
+                    <option value=" TB">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :hdd_url %></td>
+                <td><%= f.number_field :hdd_price, value: 0, class: 'price', id: "hdd_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-case">
+          <div class="topic">
+            <h2>PCケース選び方</h2>
+            <%= image_tag 'case.png', size: "100x100", alt: "case" %>
+          </div>
+          <p class="center"><%= image_tag 'case.jpg', width: '80%', alt: "PCケース" %></p>
+          <div class="text">
+            <p>
+              PCケースは、すべてのパーツを収める箱です。<br>
+              対応マザーボードサイズ(<span>フォームファクタ</span>)別で分けると、<br>
+              主なサイズは大きいほうから、<span>Extended-ATX</span>、<span>ATX</span>、<span>MicroATX</span>、<span>Mini-ITX</span>の4つです。
+            </p>
+            <p class="bold gray">ここではベアボーン（電源、マザーボード一体型）は省きます。</p>
+          </div>
+          <div class="points">
+            <h3>初めては大きいPCケースを選ぼう</h3>
+            <div class="text">
+              <p>
+                サイズが大きいと場所を取りますが、<br>
+                <span>・拡張性が高い（ドライブベイの数）<br>
+                ・冷却性能が良い（エアーフロー、ケースファンの数）<br>
+                ・パーツが干渉しない<br>
+                ・組み立てが容易</span><br>
+                といったメリットもあります。
+              </p>
+              <p class="underline">比較的大きく、もっとも標準的なサイズの<span>「ATX」対応のPCケース</span>がおすすめです。</p>
+              <p class="bold gray">誤ってマザーボード、電源ユニットが付属したものを買わないように注意しましょう。</p>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>押さえるポイント</h3>
+            <ol class="point">
+              <li>パーツ対応</li>
+              <li>デザイン</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.パーツ対応</h4>
+            </div>
+            <div class="text">
+              <p class="underline">すべてのパーツがきちんとPCケースに収まる必要があります。</p>
+              <p class="bold">PCケース選定の確認事項一覧</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>パーツ名</th>
+                    <th>確認スペック</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CPUクーラー(空冷式)</td>
+                    <td>対応CPUクーラーの高さ</td>
+                  </tr>
+                  <tr>
+                    <td>CPUクーラー(水冷式)</td>
+                    <td>対応ラジエーターのスペース</td>
+                  </tr>
+                  <tr>
+                    <td>グラフィックボード</td>
+                    <td>対応グラフィックボードの長さ</td>
+                  </tr>
+                  <tr>
+                    <td>HDD</td>
+                    <td>内部ドライブベイ3.5インチの数</td>
+                  </tr>
+                  <tr>
+                    <td>2.5インチSSD</td>
+                    <td>内部ドライブベイ2.5インチの数</td>
+                  </tr>
+                  <tr>
+                    <td>マザーボード</td>
+                    <td>対応マザーボードサイズ(Extended-ATX、ATX、MicroATX、Mini-ITX)</td>
+                  </tr>
+                  <tr>
+                    <td>電源ユニット</td>
+                    <td>電源サイズ(ATX、SFX)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="bold gray">PCケースにスペックの記載がない場合はレビューなども参考にしてみましょう。</p>
+            </div>
+            <div class="point-title">
+              <h4>2.デザイン</h4>
+            </div>
+            <div class="text">
+              <p class="bold redline">最大限カッコイイものを選ぼう！！</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">ケース スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :case, placeholder: "例：ATX", list: "case-list" %>
+                  <datalist id="case-list">
+                    <option value="Extended-ATX">
+                    <option value="ATX">
+                    <option value="MicroATX">
+                    <option value="Mini-ITX">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :case_url %></td>
+                <td><%= f.number_field :case_price, value: 0, class: 'price', id: "case_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-motherboard">
+          <div class="topic">
+            <h2>マザーボード選び方</h2>
+            <%= image_tag 'motherboard.png', size: "100x130", alt: "motherboard" %>
+          </div>
+          <p class="center"><%= image_tag 'motherboard.jpg', width: '80%', alt: "マザーボード" %></p>
+          <div class="text">
+            <p>
+              マザーボードは、パソコンに搭載されるすべてのパーツをつなぐ基板です。<br>
+              マザーボードサイズ(<span>フォームファクタ</span>)別で分けると、<br>
+              主なサイズは大きいほうから、<span>Extended-ATX</span>、<span>ATX</span>、<span>MicroATX</span>、<span>Mini-ITX</span>の4つです。
+            </p>
+          </div>
+          <div class="points">
+            <h3>PCケースに合ったマザーボード</h3>
+            <div class="text">
+              <p>
+                PCケースは、基本的に<span>「ATX」対応であれば「MicroATX」「Mini-ATX」ともに対応</span>しています。<br>
+                サイズが大きければ、<span>拡張性が高くなります。(メモリスロット、SATAポート、PCIeスロットの数)</span>
+              </p>
+              <p class="underline">比較的大きく、もっとも標準的なサイズの<span>「ATX」のマザーボード</span>がおすすめです。</p>
+              <p>基本的に<span>PCケースの対応マザーボードサイズ(フォームファクタ)</span>に合わせましょう。</p>
+            </div>
+          </div>
+          <div class="points">
+            <h3>マザボ選びポイント</h3>
+            <ol class="point">
+              <li>チップセット</li>
+              <li>補助電源</li>
+              <li>パーツ対応</li>
+              <li>映像出力端子</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.チップセット</h4>
+            </div>
+            <div class="text">
+              <p>
+                チップセットは、各パーツの橋渡しをする集積回路のことです。<br>
+                種類によって<span>対応するCPUの世代、SATAポートなど</span>が変わってきます。
+              </p>
+              <p class="bold underline">
+                CPUに対応したチップセットを搭載したマザーボードを選ぶ必要があります。<br>
+                ほとんどの場合、製品名にチップセット名が含まれています。
+              </p>
+            </div>
+            <div class="text">
+              <p class="bold">CPUの対応チップセット</p>
+              <div class="flex">
+                <div class="half">
+                  <p>Intel</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>CPU</th>
+                        <th>チップセット</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>第10世代<br>Xモデル<br>(末尾がX,Xe)</td>
+                        <td>X299</td>
+                      </tr>
+                      <tr>
+                        <td>第9世代<br>Xモデル</td>
+                        <td>X299</td>
+                      </tr>
+                      <tr>
+                        <td>第7世代<br>Xモデル</td>
+                        <td>X299</td>
+                      </tr>
+                      <tr>
+                        <td>第12世代</td>
+                        <td>Z690</td>
+                      </tr>
+                      <tr>
+                        <td>第11世代</td>
+                        <td>Z590、H570、B560、H510、<span class="red">Z490</span>、<span class="red">H470</span></td>
+                      </tr>
+                      <tr>
+                        <td>第10世代</td>
+                        <td>Z590、H570、B560、H510、Z490、H470、B460、H410</td>
+                      </tr>
+                      <tr>
+                        <td>第9世代</td>
+                        <td><span class="red">Z390</span>、<span class="red">Z370</span>、<span class="red">H370</span>、
+                        B365、<span class="red">B360</span>、<span class="red">H310</span></td>
+                      </tr>
+                      <tr>
+                        <td>第8世代</td>
+                        <td>Z390、Z370、H370、B365、B360、H310</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="bold">
+                    グレード<br>
+                    <span class="blue">低性能</span> H〇10 ＜ B ＜ H〇70 ＜ Z <span class="red">高性能</span>
+                  </p>
+                </div>
+                <div class="half">
+                  <p>AMD</p>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>CPU</th>
+                        <th>チップセット</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>第4世代</td>
+                        <td>X570、B550、A520、<span class="red">X470</span>、<span class="red">B450</span></td>
+                      </tr>
+                      <tr>
+                        <td>第3世代<br>(4000Gシリーズ)</td>
+                        <td>X570、B550</td>
+                      </tr>
+                      <tr>
+                        <td>第3世代<br>(3000シリーズ)</td>
+                        <td>X570、B550、A520、X470、B450、<span class="red">X370</span>、<span class="red">B350</span></td>
+                      </tr>
+                      <tr>
+                        <td>第3世代<br>(3000Gシリーズ)</td>
+                        <td>X570、X470、B450、X370、B350、A320</td>
+                      </tr>
+                      <tr>
+                        <td>第2世代<br>(2000シリーズ)</td>
+                        <td>X570、X470、B450、X370、B350、A320</td>
+                      </tr>
+                      <tr>
+                        <td>第2世代<br>(2000Gシリーズ)</td>
+                        <td>X470、B450、X370、B350、A320</td>
+                      </tr>
+                      <tr>
+                        <td>第1世代<br>(1000シリーズ)</td>
+                        <td>X470、B450、X370、B350、A320</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="bold">
+                    グレード<br>
+                    <span class="blue">低性能</span> A ＜ B ＜ X <span class="red">高性能</span>
+                  </p>
+                </div>
+              </div>
+              <p class="red">赤字はBIOS更新が必要、もしくは対応していない場合もあるためおすすめしません。</p>
+            </div>
+            <div class="point-title">
+              <h4>2.補助電源</h4>
+            </div>
+            <div class="text">
+              <p>マザーボードには、CPUの補助電源用コネクタの<span>4ピン</span>もしくは<span>8ピン(4+4ピン)</span>があります。</p>
+              <p class="underline">電源ユニットに、必要な補助電源(CPU用コネクタ)があるか確認しましょう。</p>
+            </div>
+            <div class="point-title">
+              <h4>3.パーツ対応</h4>
+            </div>
+            <div class="text">
+              <p class="underline">マザーボードが下記のパーツに対応している必要があります。</p>
+              <p class="bold">マザーボード選定の確認事項一覧</p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>パーツ名</th>
+                    <th>確認スペック</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CPU</td>
+                    <td>CPUに対応したチップセット(上記の表を参照)</td>
+                  </tr>
+                  <tr>
+                    <td>グラフィックボード</td>
+                    <td>PCIe x16スロットの数</td>
+                  </tr>
+                  <tr>
+                    <td>メモリ</td>
+                    <td>メモリスロットの数、<br>対応メモリタイプ(DDR4、DDR5)</td>
+                  </tr>
+                  <tr>
+                    <td>HDD、2.5インチSSD</td>
+                    <td>SATAポートの数、<br>SATAケーブルの数(マザボ付属は約2～3本)</td>
+                  </tr>
+                  <tr>
+                    <td>M.2 SSD</td>
+                    <td>M.2スロットの数、<br>対応通信規格(Serial ATA 6Gb/s、NVMe)</td>
+                  </tr>
+                  <tr>
+                    <td>PCケース</td>
+                    <td>マザーボードサイズ(Extended-ATX、ATX、MicroATX、Mini-ATX)</td>
+                  </tr>
+                  <tr>
+                    <td>電源ユニット</td>
+                    <td>補助電源(4ピン、8ピン)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="point-title">
+              <h4>4.映像出力端子</h4>
+            </div>
+            <div class="text">
+              <p><span>グラフィックボード無し</span>の場合は、<span>マザーボードの映像出力端子を使う</span>ことになります。</p>
+              <p class="underline">同じ端子があるか、<span>マザーボード、モニター、ケーブル</span>合わせて確認しましょう！</p>
+            </div>
+          </div>
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">マザーボード スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :motherboard, placeholder: "例：ATX H470", list: "motherboard-list" %>
+                  <datalist id="motherboard-list">
+                    <option value="Extended-ATX ">
+                    <option value="ATX ">
+                    <option value="MicroATX ">
+                    <option value="Mini-ITX ">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :motherboard_url %></td>
+                <td><%= f.number_field :motherboard_price, value: 0, class: 'price', id: "motherboard_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-psu">
+          <div class="topic">
+            <h2>電源ユニット選び方</h2>
+            <%= image_tag 'psu.png', size: "130x100", alt: "psu" %>
+          </div>
+          <p class="center"><%= image_tag 'psu.jpg', width: '80%', alt: "電源ユニット" %></p>
+          <div class="text">
+            <p>
+              電源ユニットは、それぞれのパーツに電源を供給するパーツです。<br>
+              電源ユニットが故障すると、必然的に他パーツも故障しかねないため、かなり重要なパーツです。
+            </p>
+          </div>
+          
+          <div class="points">
+            <h3>電源容量は消費電力の2倍！</h3>
+            <div class="text">
+              <p>
+                電源ユニットは、<span>50%負荷の時に最高効率で、長持ちもする</span>ように作られています。<br>
+                <span class="underline">消費電力の2倍の電源容量がおすすめです。</span><br>
+                ドスパラの電源容量計算機を使えば、パーツを選ぶだけで必要な電源容量が分かります。
+              </p>
+              <div class="external">
+                <%= link_to "参考：電源容量計算｜ドスパラ通販", 
+                            "https://www.dospara.co.jp/5info/cts_str_power_calculation_main",
+                            target: :_blank, rel: "noopener noreferrer" %>
+              </div>
+            </div>
+            <div class="text">
+              <p>
+                電源ユニットには、<span>80PLUS認証</span>というグレードがあります。<br>
+                グレードの高いほうから<span>Titanium</span>、<span>Platinum</span>、<span>Gold</span>、<span>Silver</span>、<span>Bronze</span>、<span>Standard</span>の6つです。
+              </p>
+              <p><%= image_tag '80plus.png', width: '100%', height: '100%', alt: "80PLUS認証" %></p>
+              <p>
+                それなりに故障しやすいパーツで、使い方や個体差もあるため、あくまで目安ですが<br>
+                <span class="bold underline">「Gold」以上を選ぶと安心かと思います。</span>
+              </p>
+            </div>
+          </div>
+          
+          <div class="points">
+            <h3>電源選びポイント</h3>
+            <ol CLASS="point">
+              <li>サイズ</li>
+              <li>補助電源</li>
+            </ol>
+            <div class="point-title">
+              <h4>1.サイズ</h4>
+            </div>
+            <div class="text">
+              <p>
+                サイズは、主に<span>ATX</span>、<span>EPS</span>、<span>SFX</span>、<span>SFX-L</span>の4つの規格があります。<br>
+                規格によってサイズは定まっていますが、奥行きは〇〇mm～〇〇mmという指定なので、同じ規格でも製品によって違うことがあります。
+              </p>
+              <p class="underline">
+                <span>PCケースで対応する電源規格</span>と<br>
+                <span>対応する電源ユニットの奥行き</span>を確認して選びましょう。
+              </p>
+            </div>
+            <div class="point-title">
+              <h4>2.補助電源</h4>
+            </div>
+            <div class="text">
+              <p>
+                <span>CPU用コネクタの4ピンもしくは8ピン</span>と<br>
+                補助電源が必要なグラフィックボードを搭載する場合、<span>PCIeコネクタの6ピンもしくは8ピン</span>が必要になります。
+              </p>
+              <p>
+                基本的には必要なケーブルがあるか確認しますが、手っ取り早い方法として<br>
+                <span class="underline">CPU用コネクタは、4+4ピン<br>
+                PCIeコネクタは、6+2ピン (2本以上)</span><br>
+                の製品を選べば両方に対応できるため安心です。
+              </p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">電源ユニット スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :psu, placeholder: "例：ATX 1000W GOLD", list: "psu-list" %>
+                  <datalist id="psu-list">
+                    <option value="ATX  W">
+                    <option value="STX-L  W">
+                    <option value="STX  W">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :psu_url %></td>
+                <td><%= f.number_field :psu_price, value: 0, class: 'price', id: "psu_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-os">
+          <div class="topic">
+            <h2>OS選び方</h2>
+          </div>
+          <div class="text">
+            <p>OSソフトは、スマホでいう「iOS」や「Android」と同じものです。</p>
+            <p>自作PCのOSは<span>「Windows」一択</span>です。</p>
+          </div>
+          <div class="points">
+            <h3>一般利用なら一択</h3>
+            <div class="text">
+              <p>明確な使用理由が無い限り、</p>
+              <p class="underline bold">結論から言えば「Windows10Homeパッケージ版」を買えばOK！</p>
+            </div>
+          </div>
+          <details><summary>Windows10の種類について</summary>
+            <div class="points">
+              <h3>Windows10の種類</h3>
+              <ol class="point">
+                <li>エディション</li>
+                <li>ライセンス</li>
+                <li>32bit版、64bit版</li>
+              </ol>
+              <div class="point-title">
+                <h4>1.エディション</h4>
+              </div>
+              <div class="text">
+                <p>エディションには<span>Home</span>と<span>Pro</span>があります。</p>
+                <p>「Pro」には<span>企業向けの追加機能</span>が備わっています。</p>
+                <p>追加機能が必要な人のみ「Pro」を買うようにしましょう。</p>
+              </div>
+              
+              <div class="point-title">
+                <h4>2.ライセンス</h4>
+              </div>
+              <div class="text">
+                <p>ライセンスには<span>パッケージ版(通常版)</span>と<span>DSP版</span>があります。</p>
+                <p class="bold">パッケージ版とDSP版の違い</p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>比較項目</th>
+                      <th>パッケージ版</th>
+                      <th>DSP版</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>購入方法</th>
+                      <td>単品購入</td>
+                      <td>PC本体 or パーツ とセット購入</td>
+                    </tr>
+                    <tr>
+                      <th>価格</th>
+                      <td>通常</td>
+                      <td>3,000~4,000円安い</td>
+                    </tr>
+                    <tr>
+                      <th>使用方法</th>
+                      <td>どのPCでも使用可</td>
+                      <td>セット購入したPC、パーツを搭載したPCでのみ使用可</td>
+                    </tr>
+                    <tr>
+                      <th>寿命</th>
+                      <td>サポート終了まで</td>
+                      <td>PC、パーツの寿命と同じ</td>
+                    </tr>
+                    <tr>
+                      <th>インストール方法</th>
+                      <td>USBメモリ</td>
+                      <td>DVD（DVDドライバが必要）</td>
+                    </tr>
+                    <tr>
+                      <th>bit数</th>
+                      <td>インストール時に32bit版、64bit版を選択</td>
+                      <td>購入時に32bit版、64bit版を選択</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="point-title">
+                <h4>3. 32bit版、64bi版</h4>
+              </div>
+              <div class="text">
+                <p>パッケージ版ではインストール時、DSP版では購入時に<span>32bit版</span>、<span>64bit版</span>どちらか選択します。</p>
+                <p>32bit版では下記のような制限があるため、<span>基本的に64bit版でOK</span>です。</p>
+                <ul>
+                  <li>メモリが最大4GBまで</li>
+                  <li>Windowsをインストールするディスク容量が最大2TBまで</li>
+                  <li>処理が遅い</li>
+                </ul>
+                <p>32bit版でしか動かない古い機器、ソフトを使う場合のみ選びましょう。</p>
+              </div>
+            </div>
+          </details>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">OS スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :os, placeholder: "例：Windows10 Home パッケージ版", list: "os-list" %>
+                  <datalist id="os-list">
+                    <option value="Windows10 Home パッケージ版">
+                    <option value="Windows10 Home DSP版 64bit版">
+                    <option value="Windows10 Home DSP版 32bit版">
+                    <option value="Windows10 Pro パッケージ版">
+                    <option value="Windows10 Pro DSP版 64bit版">
+                    <option value="Windows10 Pro DSP版 32bit版">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :os_url %></td>
+                <td><%= f.number_field :os_price, value: 0, class: 'price', id: "os_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <section id="section-peripheral">
+          <div class="topic">
+            <h2>周辺機器</h2>
+          </div>
+          <div class="text">
+            <p>
+              最低限必要な<br>
+              <span class="underline">・モニター<br>
+              ・キーボード<br>
+              ・マウス</span><br>
+              は揃えるようにしましょう！
+            </p>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">周辺機器 スペック</th>
+                <th scope="col">販売ページリンク等</th>
+                <th scope="col">値段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <%= f.text_field :peripheral, list: "peripheral-list" %>
+                  <datalist id="peripheral-list">
+                    <option value="モニター">
+                    <option value="キーボード">
+                    <option value="マウス">
+                  </datalist>
+                </td>
+                <td><%= f.text_field :peripheral_url %></td>
+                <td><%= f.number_field :peripheral_price, value: 0, class: 'price', id: "peripheral_price" %></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        
+        <p class="amount center">合計：<span id="amount">0</span>円</p>
+        <%= f.label "構成名" %>
+        <%= f.text_field :name, class: 'form-control' %>
+        <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+      <% end %>
+    </article>
+  
+  
+    <div class="sidebar">
+      <article class="sidebar__item sidebar__item--fixed">
+        <h3>目次-パーツ選び方</h3>
+        <ol>
+          <li><a href="#section-cpu">1. CPU</a></li>
+          <li><a href="#section-cooler">2. CPUクーラー</a></li>
+          <li><a href="#section-gpu">3. グラフィックボード</a></li>
+          <li><a href="#section-memory">4. メモリ</a></li>
+          <li><a href="#section-storage">5. ストレージ</a></li>
+          <li><a href="#section-case">6. PCケース</a></li>
+          <li><a href="#section-motherboard">7. マザーボード</a></li>
+          <li><a href="#section-psu">8. 電源ユニット</a></li>
+          <li><a href="#section-os">9. OS</a></li>
+          <li><a href="#section-peripheral">10. 周辺機器</a></li>
+        </ol>
+      </article>
+    </div>
+  </div>
+</div>
+
+<% # ページ内リンク %>
+<script>
+$(function(){
+  $('a[href^="#section"]').click(function(){
+    var speed = 500;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    //ヘッダーの高さを取得
+    var header = $('header').height();
+    //ヘッダーの高さを引く
+    var position = target.offset().top - header;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+});
+</script>
+
+<% # 合計金額の計算 %>
+<script>
+$(function(){
+  $( document ).on( 'keyup', '.price', function(){ 
+    const cpu = $('#cpu_price').val();
+    const gpu = $('#gpu_price').val();
+    const os = $('#os_price').val();
+    const memory = $('#memory_price').val();
+    const pc_case = $('#case_price').val();
+    const m2 = $('#m2_price').val();
+    const ssd = $('#ssd_price').val();
+    const hdd = $('#hdd_price').val();
+    const psu = $('#psu_price').val();
+    const motherboard = $('#motherboard_price').val();
+    const cooler = $('#cooler_price').val();
+    const peripheral = $('#peripheral_price').val();
+    
+    const amount = parseInt(cpu) + parseInt(gpu) + parseInt(os) + parseInt(memory) + parseInt(pc_case) +
+                   parseInt(m2) + parseInt(ssd) + parseInt(hdd) + parseInt(psu) + parseInt(motherboard) +
+                   parseInt(cooler) + parseInt(peripheral);
+    
+    $('#amount').html(amount);
+  });
+});
+</script>

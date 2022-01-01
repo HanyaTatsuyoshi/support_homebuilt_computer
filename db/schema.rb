@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_18_111413) do
+ActiveRecord::Schema.define(version: 2021_11_08_042706) do
+
+  create_table "customs", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name"
+    t.string "case"
+    t.text "case_url"
+    t.integer "case_price", default: 0
+    t.string "cpu"
+    t.text "cpu_url"
+    t.integer "cpu_price", default: 0
+    t.string "gpu"
+    t.text "gpu_url"
+    t.integer "gpu_price", default: 0
+    t.string "motherboard"
+    t.text "motherboard_url"
+    t.integer "motherboard_price", default: 0
+    t.string "memory"
+    t.text "memory_url"
+    t.integer "memory_price", default: 0
+    t.string "cooler"
+    t.text "cooler_url"
+    t.integer "cooler_price", default: 0
+    t.string "m2"
+    t.text "m2_url"
+    t.integer "m2_price", default: 0
+    t.string "ssd"
+    t.text "ssd_url"
+    t.integer "ssd_price", default: 0
+    t.string "hdd"
+    t.text "hdd_url"
+    t.integer "hdd_price", default: 0
+    t.string "psu"
+    t.text "psu_url"
+    t.integer "psu_price", default: 0
+    t.string "peripheral"
+    t.text "peripheral_url"
+    t.integer "peripheral_price", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "os"
+    t.text "os_url"
+    t.integer "os_price", default: 0
+    t.index ["user_id", "created_at"], name: "index_customs_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_customs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -36,4 +81,5 @@ ActiveRecord::Schema.define(version: 2021_10_18_111413) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "customs", "users"
 end

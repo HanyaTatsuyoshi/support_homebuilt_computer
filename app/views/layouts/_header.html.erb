@@ -1,11 +1,10 @@
 
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-default">
   <div class="container">
     <%= link_to "HOME", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "自作PCを作る", "#" %></li>
-        <li><%= link_to "説明を飛ばす", "#" %></li>
+        <li><%= link_to "自作PCを作る", new_custom_path %></li>
         <% if user_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

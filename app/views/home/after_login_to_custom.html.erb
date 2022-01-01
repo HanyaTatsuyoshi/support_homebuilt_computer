@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>戻る</title>
+  </head>
+  <body onload="document.forms[0].submit()">
+    <% if @back_controller && @back_action && @params %>
+    <%= form_tag({ controller: @back_controller, action: @back_action }, { method: 'post' }) do %>
+    <%= hidden_field_tag 'custom[name]', @params['name'] %>
+    <%= hidden_field_tag 'custom[cpu]', @params['cpu'] %>
+    <%= hidden_field_tag 'custom[cpu_url]', @params['cpu_url'] %>
+    <%= hidden_field_tag 'custom[cpu_price]', @params['cpu_price'] %>
+    <%= hidden_field_tag 'custom[gpu]', @params['gpu'] %>
+    <%= hidden_field_tag 'custom[gpu_url]', @params['gpu_url'] %>
+    <%= hidden_field_tag 'custom[gpu_price]', @params['gpu_price'] %>
+    <%= hidden_field_tag 'custom[os]', @params['os'] %>
+    <%= hidden_field_tag 'custom[os_url]', @params['os_url'] %>
+    <%= hidden_field_tag 'custom[os_price]', @params['os_price'] %>
+    <%= hidden_field_tag 'custom[memory]', @params['memory'] %>
+    <%= hidden_field_tag 'custom[memory_url]', @params['memory_url'] %>
+    <%= hidden_field_tag 'custom[memory_price]', @params['memory_price'] %>
+    <%= hidden_field_tag 'custom[case]', @params['case'] %>
+    <%= hidden_field_tag 'custom[case_url]', @params['case_url'] %>
+    <%= hidden_field_tag 'custom[case_price]', @params['case_price'] %>
+    <%= hidden_field_tag 'custom[m2]', @params['m2'] %>
+    <%= hidden_field_tag 'custom[m2_url]', @params['m2_url'] %>
+    <%= hidden_field_tag 'custom[m2_price]', @params['m2_price'] %>
+    <%= hidden_field_tag 'custom[ssd]', @params['ssd'] %>
+    <%= hidden_field_tag 'custom[ssd_url]', @params['ssd_url'] %>
+    <%= hidden_field_tag 'custom[ssd_price]', @params['ssd_price'] %>
+    <%= hidden_field_tag 'custom[hdd]', @params['hdd'] %>
+    <%= hidden_field_tag 'custom[hdd_url]', @params['hdd_url'] %>
+    <%= hidden_field_tag 'custom[hdd_price]', @params['hdd_price'] %>
+    <%= hidden_field_tag 'custom[psu]', @params['psu'] %>
+    <%= hidden_field_tag 'custom[psu_url]', @params['psu_url'] %>
+    <%= hidden_field_tag 'custom[psu_price]', @params['psu_price'] %>
+    <%= hidden_field_tag 'custom[motherboard]', @params['motherboard'] %>
+    <%= hidden_field_tag 'custom[motherboard_url]', @params['motherboard_url'] %>
+    <%= hidden_field_tag 'custom[motherboard_price]', @params['motherboard_price'] %>
+    <%= hidden_field_tag 'custom[cooler]', @params['cooler'] %>
+    <%= hidden_field_tag 'custom[cooler_url]', @params['cooler_url'] %>
+    <%= hidden_field_tag 'custom[cooler_price]', @params['cooler_price'] %>
+    <%= hidden_field_tag 'custom[peripheral]', @params['peripheral'] %>
+    <%= hidden_field_tag 'custom[peripheral_url]', @params['peripheral_url'] %>
+    <%= hidden_field_tag 'custom[peripheral_price]', @params['peripheral_price'] %>
+    <% end %>
+    <% end %>
+    <noscript>
+      <%=%>
+      <%= button_tag '戻る', class: 'btn_sub'%>
+    </noscript>
+  </body>
+</html>

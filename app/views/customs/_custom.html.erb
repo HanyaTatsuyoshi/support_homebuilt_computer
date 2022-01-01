@@ -1,0 +1,21 @@
+<li id="custom-<%= custom.id %>">
+  <span class="name">
+    <%= link_to custom.name, custom %>
+    <% if custom.name.empty? %>
+      <%= link_to "名称未設定", custom %>
+    <% end %>
+  </span>
+  <span class="parts">
+    <%= "#{custom.cpu} / #{custom.gpu} / #{custom.os} / #{custom.memory} / #{custom.case} / #{custom.m2} /
+         #{custom.ssd} / #{custom.hdd} / #{custom.psu} / #{custom.motherboard} / #{custom.cooler} /
+         #{custom.peripheral}".truncate(200) %>
+  </span>
+  <span class="amount">合計：<% amount = custom.cpu_price + custom.gpu_price + custom.os_price + custom.memory_price +
+                                      custom.case_price + custom.m2_price + custom.ssd_price + custom.hdd_price +
+                                      custom.psu_price + custom.motherboard_price + custom.cooler_price + 
+                                      custom.peripheral_price %>
+                          <%= number_to_currency(amount, :locale => 'ja') %></span>
+  <span class="timestamp">
+    <%= time_ago_in_words(custom.updated_at) %>前に保存
+  </span>
+</li>

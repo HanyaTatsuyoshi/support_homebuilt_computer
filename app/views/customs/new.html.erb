@@ -1,2 +1,218 @@
 <% provide(:title, "簡易作成") %>
-<h1>Customs#new</h1>
+
+<div id="customs-new">
+  <article>
+    <h1>自作PCの作成</h1>
+    <%= form_with(model: @custom, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label "構成名" %>
+      <%= f.text_field :name %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">パーツ名</th>
+            <th scope="col">スペック</th>
+            <th scope="col">販売ページリンク等</th>
+            <th scope="col">値段</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">CPU</th>
+            <td>
+              <%= f.text_field :cpu, placeholder: "例：Core i7-11700", list: "cpu-list" %>
+              <datalist id="cpu-list">
+                <option value="Core i9">
+                <option value="Core i7">
+                <option value="Core i5">
+                <option value="Core i3">
+                <option value="Ryzen 9">
+                <option value="Ryzen 7">
+                <option value="Ryzen 5">
+                <option value="Ryzen 3">
+              </datalist>
+            </td>
+            <td><%= f.text_field :cpu_url %></td>
+            <td><%= f.number_field :cpu_price, value: 0, class: 'price', id: "cpu_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">グラフィックボード</th>
+            <td>
+              <%= f.text_field :gpu, placeholder: "例：RTX3060", list: "gpu-list" %>
+              <datalist id="gpu-list">
+                <option value="RTX">
+                <option value="GTX">
+                <option value="RX">
+              </datalist>
+            </td>
+            <td><%= f.text_field :gpu_url %></td>
+            <td><%= f.number_field :gpu_price, value: 0, class: 'price', id: "gpu_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">OS</th>
+            <td>
+              <%= f.text_field :os, placeholder: "例：Windows10 Home パッケージ版", list: "os-list" %>
+              <datalist id="os-list">
+                <option value="Windows10 Home パッケージ版">
+                <option value="Windows10 Home DSP版 64bit版">
+                <option value="Windows10 Home DSP版 32bit版">
+                <option value="Windows10 Pro パッケージ版">
+                <option value="Windows10 Pro DSP版 64bit版">
+                <option value="Windows10 Pro DSP版 32bit版">
+              </datalist>
+            </td>
+            <td><%= f.text_field :os_url %></td>
+            <td><%= f.number_field :os_price, value: 0, class: 'price', id: "os_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">メモリ</th>
+            <td>
+              <%= f.text_field :memory, placeholder: "例：DIMM DDR4-2666 8GB 2枚", list: "memory-list" %>
+              <datalist id="memory-list">
+                <option value="DIMM DDR4 4GB 2枚">
+                <option value="DIMM DDR4 8GB 2枚">
+                <option value="DIMM DDR4 16GB 2枚">
+                <option value="DIMM DDR4 32GB 2枚">
+                <option value="DIMM DDR5 8GB 2枚">
+                <option value="DIMM DDR5 16GB 2枚">
+                <option value="DIMM DDR5 32GB 2枚">
+                <option value="DIMM DDR5 64GB 2枚">
+                <option value="DIMM DDR5 128GB 2枚">
+              </datalist>
+            </td>
+            <td><%= f.text_field :memory_url %></td>
+            <td><%= f.number_field :memory_price, value: 0, class: 'price', id: "memory_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">PCケース</th>
+            <td>
+              <%= f.text_field :case, placeholder: "例：ATX", list: "case-list" %>
+              <datalist id="case-list">
+                <option value="Extended-ATX">
+                <option value="ATX">
+                <option value="MicroATX">
+                <option value="Mini-ITX">
+              </datalist>
+            </td>
+            <td><%= f.text_field :case_url %></td>
+            <td><%= f.number_field :case_price, value: 0, class: 'price', id: "case_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">M.2 SSD</th>
+            <td>
+              <%= f.text_field :m2, placeholder: "例：500GB M.2(Type2280) NVMe PCIe3.0", list: "m2-list" %>
+              <datalist id="m2-list">
+                <option value=" GB M.2(Type2280) NVMe PCIe3.0">
+                <option value=" GB M.2(Type2280) NVMe PCIe4.0">
+              </datalist>
+            </td>
+            <td><%= f.text_field :m2_url %></td>
+            <td><%= f.number_field :m2_price, value: 0, class: 'price', id: "m2_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">SSD</th>
+            <td>
+              <%= f.text_field :ssd, placeholder: "例：500GB TLC", list: "ssd-list" %>
+              <datalist id="ssd-list">
+                <option value=" GB TLC">
+              </datalist>
+            </td>
+            <td><%= f.text_field :ssd_url %></td>
+            <td><%= f.number_field :ssd_price, value: 0, class: 'price', id: "ssd_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">HDD</th>
+            <td>
+              <%= f.text_field :hdd, placeholder: "例：2TB", list: "hdd-list" %>
+              <datalist id="hdd-list">
+                <option value=" TB">
+              </datalist>
+            </td>
+            <td><%= f.text_field :hdd_url %></td>
+            <td><%= f.number_field :hdd_price, value: 0, class: 'price', id: "hdd_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">電源ユニット</th>
+            <td>
+              <%= f.text_field :psu, placeholder: "例：ATX 1000W GOLD", list: "psu-list" %>
+              <datalist id="psu-list">
+                <option value="ATX  W">
+                <option value="STX-L  W">
+                <option value="STX  W">
+              </datalist>
+            </td>
+            <td><%= f.text_field :psu_url %></td>
+            <td><%= f.number_field :psu_price, value: 0, class: 'price', id: "psu_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">マザーボード</th>
+            <td>
+              <%= f.text_field :motherboard, placeholder: "例：ATX H470", list: "motherboard-list" %>
+              <datalist id="motherboard-list">
+                <option value="Extended-ATX ">
+                <option value="ATX ">
+                <option value="MicroATX ">
+                <option value="Mini-ITX ">
+              </datalist>
+            </td>
+            <td><%= f.text_field :motherboard_url %></td>
+            <td><%= f.number_field :motherboard_price, value: 0, class: 'price', id: "motherboard_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">CPUクーラー</th>
+            <td>
+              <%= f.text_field :cooler, placeholder: "例：空冷式 商品名", list: "cooler-list" %>
+              <datalist id="cooler-list">
+                <option value="空冷式">
+                <option value="水冷式">
+              </datalist>
+            </td>
+            <td><%= f.text_field :cooler_url %></td>
+            <td><%= f.number_field :cooler_price, value: 0, class: 'price', id: "cooler_price" %></td>
+          </tr>
+          <tr>
+            <th scope="row">周辺機器</th>
+            <td>
+              <%= f.text_field :peripheral, list: "peripheral-list" %>
+              <datalist id="peripheral-list">
+                <option value="モニター">
+                <option value="キーボード">
+                <option value="マウス">
+              </datalist>
+            </td>
+            <td><%= f.text_field :peripheral_url %></td>
+            <td><%= f.number_field :peripheral_price, value: 0, class: 'price', id: "peripheral_price" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="amount center">合計：<span id="amount">0</span>円</p>
+      <div class="row"><%= f.submit "保存する", class: "btn btn-primary col-md-6 col-md-offset-3" %></div>
+    <% end %>
+  </article>
+</div>
+
+
+<script>
+$(function(){
+  $( document ).on( 'keyup', '.price', function(){ 
+    const cpu = $('#cpu_price').val();
+    const gpu = $('#gpu_price').val();
+    const os = $('#os_price').val();
+    const memory = $('#memory_price').val();
+    const pc_case = $('#case_price').val();
+    const m2 = $('#m2_price').val();
+    const ssd = $('#ssd_price').val();
+    const hdd = $('#hdd_price').val();
+    const psu = $('#psu_price').val();
+    const motherboard = $('#motherboard_price').val();
+    const cooler = $('#cooler_price').val();
+    const peripheral = $('#peripheral_price').val();
+    
+    const amount = parseInt(cpu) + parseInt(gpu) + parseInt(os) + parseInt(memory) + parseInt(pc_case) +
+                   parseInt(m2) + parseInt(ssd) + parseInt(hdd) + parseInt(psu) + parseInt(motherboard) +
+                   parseInt(cooler) + parseInt(peripheral);
+    
+    $('#amount').html(amount);
+  });
+});
+</script>
