@@ -15,8 +15,10 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <% if notice %><p class="notice alert alert-success"><%= notice %></p><% end %>
-      <% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
+      <% flash.each do |message_type, message| %>
+        <% if message_type == "notice" %><div class="alert alert-success"><%= message %></div><% end %>
+        <% if message_type == "alert" %><div class="alert alert-danger"><%= message %></div><% end %>
+      <% end %>
       
       <%= yield %>
       <%= render 'layouts/footer' %>

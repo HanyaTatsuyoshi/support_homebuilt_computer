@@ -2,7 +2,7 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      The form contains <%= pluralize(object.errors.count, "error") %>.
+      <%= object.errors.count %>件のエラーが発生したため送信は失敗しました。
     </div>
     <ul>
     <% object.errors.full_messages.each do |msg| %>

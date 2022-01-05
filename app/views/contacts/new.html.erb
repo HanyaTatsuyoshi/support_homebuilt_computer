@@ -1,0 +1,29 @@
+<% provide(:title, "お問い合わせ") %>
+
+<div class="row" id="contacts-new">
+  <article class="col-md-8 col-md-offset-2">
+    <h2 class="center">お問い合わせ</h2>
+    
+    <%= form_with(model: @contact, local: true) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <%= f.label :name, 'お名前' %>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+    
+      <div class="field">
+        <%= f.label :contact_information, 'ご連絡先' %>
+        <%= f.text_field :contact_information %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :message, 'お問い合わせ内容' %>
+        <%= f.text_area :message, size: '10x10' %>
+      </div>
+    
+      <div>
+        <%= f.submit '送信', class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </article>
+</div>

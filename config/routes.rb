@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :customs, only: [:new, :create, :show, :edit, :update, :destroy]
   get 'after_login_to_custom', to: 'home#after_login_to_custom'
+  resources :contacts, only: [:new, :create]
   
   get '/privacy-policy', to: 'static_pages#privacy_policy'
   

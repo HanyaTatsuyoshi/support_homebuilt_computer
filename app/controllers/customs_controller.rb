@@ -17,7 +17,7 @@ class CustomsController < ApplicationController
       @custom = Custom.new(custom_params)
       @custom.user_id = current_user.id
       if @custom.save
-        flash[:success] = "構成を保存しました"
+        flash[:notice] = "構成を保存しました。"
         redirect_to @custom
       else
         render 'new'
@@ -78,7 +78,7 @@ class CustomsController < ApplicationController
   
   def update
     if @custom.update(custom_params)
-      flash[:success] = "構成を変更しました"
+      flash[:notice] = "構成を変更しました。"
       redirect_to @custom
     else
       render 'edit'
@@ -87,7 +87,7 @@ class CustomsController < ApplicationController
   
   def destroy
     @custom.destroy
-    flash[:success] = "構成を削除しました"
+    flash[:notice] = "構成を削除しました。"
     redirect_to current_user
   end
   
