@@ -1,0 +1,5 @@
+<li>
+  <%= user.id %>
+  <%= link_to user.email, admins_user_path(user) %>
+  <%= link_to "削除", admins_user_path(user), method: :delete, data: { confirm: "本当によろしいですか？" }, class: "delete" %>
+</li>

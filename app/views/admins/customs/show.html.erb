@@ -2,10 +2,10 @@
 
 <div id="customs-show">
   <article>
+    <%= @custom.id %>
     <h1><%= @custom.name %><%= "名称未設定" if @custom.name.empty? %></h1>
     <p>
-      <%= link_to "編集", edit_custom_path(@custom) %> |
-      <%= link_to "削除", @custom, method: :delete, data: { confirm: "本当によろしいですか？" }, class: "delete" %>
+      <%= link_to "削除", admins_custom_path(@custom), method: :delete, data: { confirm: "本当によろしいですか？" }, class: "delete" %>
       <span class="timestamp">
         <%= time_ago_in_words(@custom.updated_at) %>前に保存
       </span>

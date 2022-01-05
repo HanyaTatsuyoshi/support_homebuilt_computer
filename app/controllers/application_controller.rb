@@ -17,10 +17,15 @@ class ApplicationController < ActionController::Base
   
   
   def after_sign_in_path_for(resource_or_scope)
-    if session[:after_login_to_custom]
-      after_login_to_custom_path
-    else
-      stored_location_for(resource_or_scope) || super
+    case resource_or_scope
+    when Admin
+      admins_users_path
+    when User
+      if session[:after_login_to_custom]
+        after_login_to_custom_path
+      else
+        stored_location_for(resource_or_scope) || super
+      end
     end
   end
 end

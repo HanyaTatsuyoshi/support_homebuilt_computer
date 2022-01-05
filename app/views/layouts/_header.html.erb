@@ -1,9 +1,8 @@
-
-<header class="navbar navbar-fixed-top navbar-default">
+<header class="navbar-fixed-top navbar-default">
   <div class="container">
     <%= link_to "HOME", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
+    <nav class="nav">
+      <ul class="navbar-nav navbar-right">
         <li><%= link_to "自作PCを作る", new_custom_path %></li>
         <% if user_signed_in? %>
           <li class="dropdown">
@@ -20,6 +19,7 @@
             </ul>
           </li>
         <% else %>
+          <li><%= link_to "アカウント登録", new_user_registration_path %></li>
           <li><%= link_to "ログイン", new_user_session_path %></li>
         <% end %>
       </ul>

@@ -1,0 +1,12 @@
+
+<header class="navbar navbar-fixed-top navbar-default">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "全てのユーザー", admins_users_path %></li>
+        <li><%= link_to "全ての自作PC", admins_customs_path %></li>
+        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,10 +1,17 @@
 <li id="custom-<%= custom.id %>">
   <span class="name">
-    <%= link_to custom.name, custom %>
+    <%= custom.id %>
+    <%= link_to custom.name, admins_custom_path(custom) %>
     <% if custom.name.empty? %>
-      <%= link_to "名称未設定", custom %>
+      <%= link_to "名称未設定", admins_custom_path(custom) %>
     <% end %>
   </span>
+  <p>
+    <%= link_to custom.user.email, admins_user_path(custom.user) %>
+    <span>
+      <%= link_to "削除", admins_custom_path(custom), method: :delete, data: { confirm: "本当によろしいですか？" }, class: "delete" %>
+    </span>
+  </p>
   <span class="parts">
     <%= "#{custom.cpu} / #{custom.cooler} / #{custom.gpu} / #{custom.memory} / #{custom.hdd} / #{custom.ssd} /
          #{custom.m2} / #{custom.case} / #{custom.motherboard} / #{custom.psu} / #{custom.os} /

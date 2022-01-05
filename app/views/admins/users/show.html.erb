@@ -1,0 +1,17 @@
+<% provide(:title, @user.id) %>
+<div class="row">
+  <section class="user_info">
+    <span><%= @user.id %></span>
+    <h1><%= @user.email %></h1>
+    <div>
+      <%= link_to "削除", admins_user_path(@user), method: :delete, data: { confirm: "本当によろしいですか？" }, class: "delete" %>
+    </div>
+  </section>
+  <% if @user.customs.any? %>
+    <h3>自作PC構成一覧 (<%= @user.customs.count %>)</h3>
+    <ol class="microposts">
+      <%= render @customs %>
+    </ol>
+    <%= will_paginate @customs %>
+  <% end %>
+</div>
