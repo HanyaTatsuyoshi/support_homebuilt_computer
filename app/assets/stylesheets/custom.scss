@@ -26,6 +26,7 @@ article {
   padding: 10px;
   background-color: white;
   border: 1px solid $gray-medium-light;
+  border-radius: 5px;
 }
 
 .center {
@@ -518,6 +519,8 @@ details[open] summary::before {
 }
 
 
+/* custom */
+
 #customs-show {
   table {
     width: 100%;
@@ -525,6 +528,13 @@ details[open] summary::before {
     word-break: break-all;
     word-wrap: break-all;
   }
+}
+
+
+/* privacy_poricy */
+
+.privacy_policy {
+  margin: 20px;
 }
 
 

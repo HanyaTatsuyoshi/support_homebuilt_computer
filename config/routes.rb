@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :customs, only: [:new, :create, :show, :edit, :update, :destroy]
   get 'after_login_to_custom', to: 'home#after_login_to_custom'
   
+  get '/privacy-policy', to: 'static_pages#privacy_policy'
+  
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
