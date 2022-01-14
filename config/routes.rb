@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   
   get '/privacy-policy', to: 'static_pages#privacy_policy'
   
+  get '/sitemap', to: redirect("https://s3-ap-northeast-1.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemaps/sitemap.xml.gz")
+  
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
