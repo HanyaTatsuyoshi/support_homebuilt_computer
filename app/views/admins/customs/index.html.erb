@@ -1,10 +1,15 @@
 <% provide(:title, '全ての自作PC') %>
-<h1>全ての自作PC</h1>
 
-<%= will_paginate %>
-
-<ul class="customs">
-  <%= render @customs %>
-</ul>
-
-<%= will_paginate %>
+<div id="admins-customs-index">
+  <article class="col-md-8 col-md-offset-2">
+    <h1>全ての自作PC</h1>
+    
+    <%= will_paginate %>
+    
+    <ul class="customs">
+      <%= render @customs %>
+    </ul>
+    
+    <%= will_paginate %>
+  </article>
+</div>

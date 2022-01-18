@@ -1,7 +1,7 @@
 <% provide(:title, "構成編集") %>
 
 <div id="customs-edit">
-  <article>
+  <article class="col-md-8 col-md-offset-2">
     <h1>構成編集</h1>
     <%= form_with(model: @custom, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>

@@ -313,7 +313,6 @@ input[type="number"] {
 }
 
 .main {
-  display: block;
   padding: 30px;
   margin-right: 20px;
 }
@@ -515,7 +514,6 @@ details[open] summary::before {
   position: sticky;
   margin-bottom: 0;
   top: 100px;
-  z-index: 1;
 }
 
 
@@ -535,22 +533,4 @@ details[open] summary::before {
 
 .privacy_policy {
   margin: 20px;
-}
-
-
-@media screen and (max-width: 768px) {
-  
-  #logo {
-    font-size: 1.7rem;
-  }
-  
-  .nav {
-    a {
-      font-size: 1.2rem;
-    }
-  }
-  
-  .sidebar {
-    display: none;
-  }
 }

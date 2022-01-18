@@ -1,7 +1,7 @@
 <% provide(:title, "簡易作成") %>
 
 <div id="customs-new">
-  <article>
+  <article class="col-md-8 col-md-offset-2">
     <h1>自作PCの作成</h1>
     <%= form_with(model: @custom, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>

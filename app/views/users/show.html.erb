@@ -1,13 +1,11 @@
 <% provide(:title, "構成一覧") %>
 
 <div id="users-show">
-  <article>
-    <% if @user.customs.any? %>
-      <h3>Customs (<%= @user.customs.count %>)</h3>
-      <ol class="customs">
-        <%= render @customs %>
-      </ol>
-      <%= will_paginate @customs %>
-    <% end %>
+  <article class="col-md-8 col-md-offset-2">
+    <h3>保存した自作パソコン一覧 (<%= @user.customs.count %>)</h3>
+    <ol class="customs">
+      <%= render @customs %>
+    </ol>
+    <%= will_paginate @customs %>
   </article>
 </div>

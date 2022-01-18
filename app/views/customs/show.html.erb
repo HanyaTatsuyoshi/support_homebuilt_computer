@@ -1,7 +1,7 @@
 <% provide(:title, "構成詳細") %>
 
 <div id="customs-show">
-  <article>
+  <article class="col-md-8 col-md-offset-2">
     <h1><%= @custom.name %><%= "名称未設定" if @custom.name.empty? %></h1>
     <p>
       <%= link_to "編集", edit_custom_path(@custom) %> |

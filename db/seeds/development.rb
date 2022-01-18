@@ -8,9 +8,11 @@ end
 99.times do |n|
   email = "example-#{n+1}@example.com"
   password = "password"
+  agreement = "1"
   User.create!(email:        email,
                password:     password,
-               confirmed_at: Time.now)
+               confirmed_at: Time.now,
+               agreement: agreement)
 end
 
 # カスタム

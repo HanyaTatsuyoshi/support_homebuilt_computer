@@ -1,10 +1,15 @@
 <% provide(:title, '全てのユーザー') %>
-<h1>全てのユーザー</h1>
 
-<%= will_paginate %>
-
-<ul class="users">
-  <%= render @users %>
-</ul>
-
-<%= will_paginate %>
+<div id="admins-users-index">
+  <article class="col-md-8 col-md-offset-2">
+    <h1>全てのユーザー</h1>
+    
+    <%= will_paginate %>
+    
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+    
+    <%= will_paginate %>
+  </article>
+</div>
