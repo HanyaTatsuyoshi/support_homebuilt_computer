@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, target-densitydpi=device-dpi">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= render 'layouts/shim' %>
   </head>
@@ -14,8 +15,10 @@
   <body>
     <%= render 'layouts/admins/header' %>
     <div class="container-fluid">
-      <% if notice %><p class="notice alert alert-success"><%= notice %></p><% end %>
-      <% if alert %><p class="alert alert-danger"><%= alert %></p><% end %>
+      <% flash.each do |message_type, message| %>
+        <% if message_type == "notice" %><div class="alert alert-success"><%= message %></div><% end %>
+        <% if message_type == "alert" %><div class="alert alert-danger"><%= message %></div><% end %>
+      <% end %>
       
       <%= yield %>
       <%= render 'layouts/admins/footer' %>

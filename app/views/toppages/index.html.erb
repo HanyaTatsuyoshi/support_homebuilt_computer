@@ -1,14 +1,16 @@
+<% provide(:title, "初心者必見！誰でもできる簡単自作パソコン必要パーツの選び方") %>
+
 <div class="row" id="toppages-index">
   <div class="content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <article class="main col-md-10">
       <p class="center"><%= image_tag 'pc.jpg', width: '100%', alt: "パソコン" %></p>
       <p class="update-date">更新日 2022.01.01</p>
-      <h1>初めてのための！<br>自作パソコン必要パーツ選び方</h1>
+      <h1>初心者必見！誰でもできる<br>簡単自作パソコン必要パーツの選び方</h1>
       <div class="text">
         <p>
           自作パソコンに初めて挑戦する人に向けて、<span>パーツの選び方</span>と<span>押さえるべきポイント</span>をまとめました。
           事前に<span>自作パソコンの目的</span>と<span>予算</span>を明確にしておくと、パーツ選びがスムーズになると思います。
-          <span>右の目次からパーツそれぞれの説明に飛べます。</span>
+          <span>右の目次からパーツそれぞれの説明に飛ぶことができます。</span>
         </p>
         <ul>
           <span class="bold">例）利用目的</span>
@@ -96,7 +98,7 @@
               <p>
                 <span class="red">要注意！！</span><br>
                 CPUの<span>世代</span>によっては<br>
-                <span><span class="redline">旧世代Core i7(Ryzen 7) 低性能</span>　＜　<span class="blueline">新世代Core i3(Ryzen 3) 高性能</span></span><br>
+                <span><span class="redline">新世代Core i3(Ryzen 3) 高性能</span>　＞　<span class="blueline">旧世代Core i7(Ryzen 7) 低性能</span></span><br>
                 ということが起きます。
               </p>
               <p class="underline">
@@ -627,7 +629,7 @@
               <p>
                 <span class="red">要注意！！</span><br>
                 CPUとGPUの片方の性能だけ高くても、<span>ボトルネック</span>と呼ばれる問題が生まれます！<br>
-                <span><span class="redline">低性能CPU + 高性能GPU(パフォーマンス低)</span>　＜　<span class="blueline">中性能CPU + 中性能GPU(パフォーマンス高)</span></span>
+                <span><span class="redline">中性能CPU + 中性能GPU(パフォーマンス高)</span>　＞　<span class="blueline">低性能CPU + 高性能GPU(パフォーマンス低)</span></span>
               </p>
               <p>
                 グラフィックボードを使用する環境では、<span>CPUとグラフィックボードのバランス</span>が大事です。<br>
@@ -1287,7 +1289,7 @@
                       </tr>
                       <tr>
                         <td>第11世代</td>
-                        <td>Z590、H570、B560、H510、<span class="red">Z490</span>、<span class="red">H470</span></td>
+                        <td>Z590、H570、B560、H510、<span class="blue">Z490</span>、<span class="blue">H470</span></td>
                       </tr>
                       <tr>
                         <td>第10世代</td>
@@ -1295,8 +1297,8 @@
                       </tr>
                       <tr>
                         <td>第9世代</td>
-                        <td><span class="red">Z390</span>、<span class="red">Z370</span>、<span class="red">H370</span>、
-                        B365、<span class="red">B360</span>、<span class="red">H310</span></td>
+                        <td><span class="blue">Z390</span>、<span class="blue">Z370</span>、<span class="blue">H370</span>、
+                        B365、<span class="blue">B360</span>、<span class="blue">H310</span></td>
                       </tr>
                       <tr>
                         <td>第8世代</td>
@@ -1306,7 +1308,7 @@
                   </table>
                   <p class="bold">
                     グレード<br>
-                    <span class="blue">低性能</span> H〇10 ＜ B ＜ H〇70 ＜ Z <span class="red">高性能</span>
+                    <span class="red">高性能</span> Z ＞ H〇70 ＞ B ＞ H〇10 <span class="blue">低性能</span>
                   </p>
                 </div>
                 <div class="half">
@@ -1321,7 +1323,7 @@
                     <tbody>
                       <tr>
                         <td>第4世代</td>
-                        <td>X570、B550、A520、<span class="red">X470</span>、<span class="red">B450</span></td>
+                        <td>X570、B550、A520、<span class="blue">X470</span>、<span class="blue">B450</span></td>
                       </tr>
                       <tr>
                         <td>第3世代<br>(4000Gシリーズ)</td>
@@ -1329,7 +1331,7 @@
                       </tr>
                       <tr>
                         <td>第3世代<br>(3000シリーズ)</td>
-                        <td>X570、B550、A520、X470、B450、<span class="red">X370</span>、<span class="red">B350</span></td>
+                        <td>X570、B550、A520、X470、B450、<span class="blue">X370</span>、<span class="blue">B350</span></td>
                       </tr>
                       <tr>
                         <td>第3世代<br>(3000Gシリーズ)</td>
@@ -1351,11 +1353,11 @@
                   </table>
                   <p class="bold">
                     グレード<br>
-                    <span class="blue">低性能</span> A ＜ B ＜ X <span class="red">高性能</span>
+                    <span class="red">高性能</span> X ＞ B ＞ A <span class="blue">低性能</span>
                   </p>
                 </div>
               </div>
-              <p class="red">赤字はBIOS更新が必要、もしくは対応していない場合もあるためおすすめしません。</p>
+              <p class="blue">青字はBIOS更新が必要、もしくは対応していない場合もあるためおすすめしません。</p>
             </div>
             <div class="point-title">
               <h4>2.補助電源</h4>

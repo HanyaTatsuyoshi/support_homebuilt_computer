@@ -13,6 +13,10 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+html {
+  // font-size: 20px;
+}
+
 body {
   padding-top: 60px;
   background-color: whitesmoke;
@@ -88,7 +92,7 @@ li {
 
 header {
   border-bottom: 1px solid $gray-medium-light;
-  padding-top: 10px;
+  padding-top: 5px;
   a {
     &:hover {
       font-weight: bold;
@@ -98,26 +102,18 @@ header {
 }
 
 #logo {
-  float: left;
-  margin-right: 10px;
+  color: #337ab7;
   font-size: 22px;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 5px;
   font-weight: bold;
   &:hover {
-    text-decoration: none;
+    color: #23527c;
   }
 }
 
 .nav {
   li {
-    display: inline-block;
     a {
       padding: 1.1rem;
-      &:hover {
-        text-decoration: none;
-      }
     }
   }
 }
