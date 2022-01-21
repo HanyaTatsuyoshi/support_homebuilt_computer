@@ -9,32 +9,31 @@
       <div class="text">
         <p>
           自作パソコンに初めて挑戦する人に向けて、<span>パーツの選び方</span>と<span>押さえるべきポイント</span>をまとめました。
-          事前に<span>自作パソコンの目的</span>と<span>予算</span>を明確にしておくと、パーツ選びがスムーズになると思います。
-          <span>右の目次からパーツそれぞれの説明に飛ぶことができます。</span>
+          事前に<span>自作パソコンの目的</span>と<span>予算</span>を明確にしておくと、パーツ選びがスムーズになります。
+          <span>パソコンから見てる人は、右の目次からパーツそれぞれの説明に飛ぶことができます。</span>
+        </p>
+        <p>
+          自作パソコンに必要な下記のパーツそれぞれの選び方を説明します。
         </p>
         <ul>
-          <span class="bold">例）利用目的</span>
-          <li>インターネット</li>
-          <li>オフィス</li>
-          <li>ゲーム</li>
-          <li>動画編集</li>
-          <li>トレード...</li>
+          <span class="bold">自作パソコン必要パーツ一覧</span>
+          <li>CPU</li>
+          <li>CPUクーラー</li>
+          <li>グラフィックボード</li>
+          <li>メモリ</li>
+          <li>ストレージ(HDD、2.5インチSSD、M.2 SSD)</li>
+          <li>PCケース</li>
+          <li>マザーボード</li>
+          <li>電源ユニット</li>
+          <li>OS</li>
         </ul>
       </div>
       <div class="text">
         <p><span class="gray">必須のソフト等ある場合は事前に動作環境を調べるのをおすすめします。</span></p>
         <p>
           基本的に<span>新品パーツ</span>で揃えることをおすすめします。
-          中古パーツを使うと、保証が受けられないのは勿論、動作不良時の原因究明が難しくなるなどデメリットが多くなります。
+          <span class="red">中古パーツを使うと、保証が受けられないのは勿論、動作不良時の原因究明が難しくなるなどデメリットが多くなります。</span>
         </p>
-        <p class="bold">
-          具体的なパーツ選びの際に、「
-          <%= link_to "価格ドットコム", "https://kakaku.com/pc/", target: :_blank, rel: "noopener noreferrer" %>
-          」の絞り込み機能がとても便利で私も利用しているのでおすすめです。
-        </p>
-        <div class="external">
-          <%= link_to "参考：【価格.com】パソコン", "https://kakaku.com/pc/", target: :_blank, rel: "noopener noreferrer" %>
-        </div>
       </div>
       <%= form_with(model: @custom, local: true, url: new_custom_path, method: :get) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
@@ -52,18 +51,19 @@
             </p>
             <p>
               主なメーカーは<span>Intel(Coreシリーズ)</span>と<span>AMD(Ryzenシリーズ)</span>があります。
-              Intel(Coreシリーズ)のみに最適化されているソフトも一部ありますが、AMD(Ryzenシリーズ)を選んでも概ね問題ありません。
+              どちらのメーカーを選んでも概ね問題ありません。
             </p>
           </div>
           <div class="points">
             <h3>用途にあったCPUを選ぶ</h3>
             <div class="text">
+              <p>CPUには、<span>大まかな性能を表す「グレード」</span>と<span>発売時期を表す「世代」</span>があります。</p>
               <p class="underline">まずは<span>CPUのグレード</span>をもとにざっくりと必要な性能を把握しましょう！</p>
             </div>
             <div class="text">
               <p class="bold">グレードの確認方法</p>
               <p><%= image_tag 'cpu-grade.png', width: '100%', height: '100%', alt: "グレードの確認方法" %></p>
-              <p class="center bold gray">グレードの数字が大きいほど性能が高くなります。</p>
+              <p class="center bold gray">グレードにあたる「3、5、7、9」の数字が大きいほど性能が高くなります。</p>
             </div>
             <div class="text">
               <p class="bold">用途別グレード目安表</p>
@@ -98,12 +98,11 @@
               <p>
                 <span class="red">要注意！！</span><br>
                 CPUの<span>世代</span>によっては<br>
-                <span><span class="redline">新世代Core i3(Ryzen 3) 高性能</span>　＞　<span class="blueline">旧世代Core i7(Ryzen 7) 低性能</span></span><br>
+                <span><span class="redline">最新世代Core i3(Ryzen 3) 高性能</span>　＞　<span class="blueline">旧世代Core i7(Ryzen 7) 低性能</span></span><br>
                 ということが起きます。
               </p>
               <p class="underline">
-                最新世代CPUの発売が約1年前なら<span>1世代前のCPU</span>、<br>
-                数か月前なら<span>2世代前のCPU</span>を基準にするのがおすすめです。
+                <span>最新世代もしくは、1世代前のCPU</span>を選べば間違いなし！
               </p>
             </div>
             <div class="text">
@@ -116,7 +115,7 @@
             </div>
             <div class="text">
               <p>
-                CPUのグレード、世代の見立てがついたところで具体的なCPUの選定に入ります。<br>
+                CPUのグレード、世代の見立てがついたので具体的なCPUの選定します。<br>
                 私がいつも参考にしているサイトを紹介します。
               </p>
               <div class="external">
@@ -135,48 +134,11 @@
           <div class="points">
             <h3>押さえるポイント</h3>
             <ol class="point">
-              <li>コア数・スレッド数</li>
-              <li>世代</li>
               <li>内蔵グラフィック</li>
             </ol>
             
             <div class="point-title">
-              <h4>1.コア数・スレッド数</h4>
-            </div>
-            <div class="text">
-              <p>
-                コア数とスレッド数は同時に処理できる作業単位です。<br>
-                CPUの性能に直結する部分なので、コア数・スレッド数は高いに越したことはないです。
-              </p>
-              <p>
-                特に<span>動画編集、配信等</span>するならこの数値が高いものを選ぶと良いです。<br>
-                たとえば<span>動画編集を行うなら6～8コア以上</span>を選ぶことをおすすめします。
-              </p>
-            </div>
-            
-            <div class="point-title">
-              <h4>2.世代</h4>
-            </div>
-            <div class="text">
-              <p>
-                世代とは、簡単にいうとCPUがいつ発売されたかです。<br>
-                なので<span>新しい世代のCPUを選ぶ</span>のが無難です。<br>
-                3～4世代以前のCPUは特別な理由がない限り避けるようにしましょう。
-              </p>
-              <p class="underline">今後<span>PCパーツの換装を視野に入れている場合</span>は、古い世代を選ぶと他パーツも交換の必要がてくるため<span>最新世代</span>をおすすめします。</p>
-            </div>
-            <div class="text">
-              <details><summary>世代の確認方法(再掲)</summary>
-                <P><%= image_tag 'cpu-generation.png', width: '100%', height: '100%', alt: "世代の確認方法" %></P>
-                <div class="flex">
-                  <p class="half bold gray">Intelは「10」なら第10世代、「11」なら第11世代！</p>
-                  <p class="half bold gray">AMDは数字が「3」と「4」が第3世代、「5」が第4世代になるので要注意！</p>
-                </div>
-              </details>
-            </div>
-            
-            <div class="point-title">
-              <h4>3.内蔵グラフィック</h4>
+              <h4>1.内蔵グラフィック</h4>
             </div>
             <div class="text">
               <p>
@@ -211,10 +173,10 @@
                 グラフィックボード無しの場合、<span>Intelなら無印</span>、
                 <span>AMDならGモデル(内臓グラフィック有)</span><br>
                 グラフィックボード有りの場合、<span>Intelなら無印</span>、
-                <span>AMDなら無印 or Gモデル</span>　を選びましょう。
+                <span>AMDなら無印 or Gモデル</span>　を選びましょう！
               </p>
             </div>
-            <div class="text">
+            <div class="text" id="section-suffix">
               <details><summary>サフィックスの仕様一覧</summary>
                 <div class="flex">
                   <div class="half">
@@ -330,11 +292,15 @@
           </div>
           <div class="text">
             <p>
-              アカウント登録することで自作パソコンの構成パーツを保存していつでも確認できます。<br>
+              <%= link_to "アカウント登録", new_user_registration_path %>
+              することで自作パソコンの構成パーツを保存していつでも確認できます。<br>
               お見積もりなどご自由にお役立てください。
             </p>
             <p class="center"><%= link_to "アカウント登録", new_user_registration_path, class: "outline" %></p>
-            <p>ログインした状態で下の欄に入力して、ページ最下部の「確認画面へ進む」から保存ができます。</p>
+            <p>
+              <%= link_to "ログイン", new_user_session_path %>
+              した状態で下の欄に入力して、ページ最下部の「確認画面へ進む」から保存ができます。
+            </p>
             <p class="gray">※空欄のままでも保存できます。保存した構成は後から編集できます。</p>
           </div>
           
@@ -379,12 +345,11 @@
             <p>
               CPUクーラーは、CPUを冷やすためのパーツです。<br>
               <span>多くのCPUには純正クーラー(リテールクーラー)が標準で付属しています。</span><br>
-              <span class="gray">一部のCPUには付属していません。詳細は「CPU選び方 > 押さえるポイント > 3.内臓グラフィック」の「サフィックスの仕様一覧」をご参照ください。</span>
+              <span class="gray">一部のCPUには付属していません。詳細は<a href="#section-suffix">「サフィックスの仕様一覧」</a>をご参照ください。</span>
             </p>
             <p>
               また、CPUクーラーには<span>空冷式</span>と<span>水冷式</span>の2つの冷却方式があります。<br>
-              ここでいう水冷式とは<span>"簡易水冷"</span>を指します。<br>
-              <span class="gray">※本格水冷は初心者向けではないためここでは触れません。</span>
+              ここでいう水冷式とは<span>"簡易水冷"</span>を指します。
             </p>
           </div>
           <div class="points">
@@ -392,15 +357,10 @@
             <div class="text">
               <p>
                 高負荷の作業、冷房設備の無い使用環境等でなければ、<br>
-                <span class="underline">基本的には付属の純正クーラーで十分です。</span>
+                <span class="underline">基本的には付属の純正クーラーで十分です！</span>
               </p>
               <p class="bold">CPUにCPUクーラーが付属してない場合には必ず用意しましょう。</p>
-            </div>
-            <div class="text">
-              <P>
-                CPUクーラーは後述の<span>「押さえるポイント」</span>さえ考慮すれば機能します。<br>
-                あとはどこまでこだわるかの話になるため、それぞれの好みになります。
-              </p>
+              <p class="underline">初めての場合は<span>空冷式</span>をおすすめします！</p>
             </div>
             <div class="text">
               <p class="bold">参考：空冷式と水冷式のメリット・デメリット</p>
@@ -432,7 +392,6 @@
               </table>
             </div>
             <div class="text">
-              <p class="underline">初めての場合は<span>空冷式</span>をおすすめします。</p>
               <p>また、<span>CPUグリスも単品で買う</span>とより冷やすことができます。</p>
             </div>
           </div>
@@ -451,7 +410,7 @@
                 CPUクーラーもソケットに適合する必要があります。
               </p>
               <p class="bold">CPUは世代ごとにソケットが決まっています。</p>
-              <p class="underline">CPUのソケットが、<span>CPUクーラーの対応ソケットの欄に記載があるか</span>確認しましょう。</p>
+              <p class="underline">CPUのソケットが、<span>CPUクーラーの対応ソケットの欄に記載があるか</span>確認しましょう！</p>
             </div>
             <div class="text">
               <p class="bold">CPU世代・ソケット対応表</p>
@@ -467,21 +426,6 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>第10世代<br>Xモデル<br>(末尾がX,XE)</td>
-                        <td>LGA2066</td>
-                        <td>Cascade Lake-X</td>
-                      </tr>
-                      <tr>
-                        <td>第9世代<br>Xモデル</td>
-                        <td>LGA2066</td>
-                        <td>Skylake-X Refresh</td>
-                      </tr>
-                      <tr>
-                        <td>第7世代<br>Xモデル</td>
-                        <td>LGA2066</td>
-                        <td>Kaby Lake-X,<br>Skylake-X</td>
-                      </tr>
                       <tr>
                         <td>第12世代</td>
                         <td>LGA1700</td>
@@ -506,6 +450,21 @@
                         <td>第8世代</td>
                         <td>LGA1151v2</td>
                         <td>Coffee Lake-S</td>
+                      </tr>
+                      <tr>
+                        <td>第10世代<br>Xモデル<br>(末尾がX,XE)</td>
+                        <td>LGA2066</td>
+                        <td>Cascade Lake-X</td>
+                      </tr>
+                      <tr>
+                        <td>第9世代<br>Xモデル</td>
+                        <td>LGA2066</td>
+                        <td>Skylake-X Refresh</td>
+                      </tr>
+                      <tr>
+                        <td>第7世代<br>Xモデル</td>
+                        <td>LGA2066</td>
+                        <td>Kaby Lake-X,<br>Skylake-X</td>
                       </tr>
                     </tbody>
                   </table>
@@ -548,7 +507,7 @@
             <div class="text">
               <p>
                 大きいサイズのCPUクーラーでは、PCケースのサイドパネルが閉まらないことがあります。<br>
-                多くのPCケースには<span>対応するCPUクーラーの高さが記載されています。</span><br>
+                多くのPCケースには<span class="underline">対応するCPUクーラーの高さが記載されています！</span><br>
                 大きなヒートシンクを持つ<span>メモリも干渉に気をつけましょう。</span>
               </p>
               <p><span>水冷式では、PCケースの対応ラジエーターサイズ</span>も確認しておきましょう。</p>
@@ -589,10 +548,9 @@
             <p>
               グラフィックボードは、映像を映すためのパーツです。<br>
               グラフィックボードは<span>グラボ、ビデオカード、GPU</span>とも呼ばれます。<br>
-              <span class="gray">※明確にはGPUは、グラフィックボードの搭載チップを指します。</span><br>
               搭載チップの主なメーカーは<span>NVIDIA(GeForce)</span>と<span>AMD(Radeon)</span>があります。
             </p>
-            <p class="underline">性能は、<span>PCパーツメーカーの違いで大差はない</span>ため、搭載チップで選ぶようにしましょう。</p>
+            <p class="underline">性能は、<span>PCパーツメーカーの違いで大差はない</span>ため、搭載チップで選ぶようにしましょう！</p>
             <p>
               大まかに分けると、<span>NVIDIAはゲーム向け、AMDはそれ以外</span>に向いてるといえます。<br>
               <span class="gray">シェア率的に、ゲーム以外の用途でNVIDIAを選んでも問題ありませんが、ゲーム用途でAMDはおすすめしません。</span>
@@ -601,8 +559,8 @@
           <div class="points">
             <h3>グラフィックボードの性能引き出せてないかも...</h3>
             <div class="text">
-              <p>前提として、<span>CPUが内臓グラフィック搭載モデルであれば、グラフィックボード無しでパソコンは動作します。</span></p>
-              <p>下記のような時にはグラフィックボードが必要になります。</p>
+              <p class="bold">CPUが内臓グラフィック搭載モデルであれば、グラフィックボード無しでパソコンは動作します。</p>
+              <p>下記のような時には<span>グラフィックボードが必要</span>になります。</p>
               <p>
                 <ul>
                   <span class="bold">例）グラフィックボードが必要な用途</span>
@@ -617,8 +575,9 @@
                 <span class="gray">少なくとも推奨スペック以上を選びましょう。</span>
               </p>
               <p>
-                グラフィックボードの名前を参考サイトと照らし合わせることで、<span>必要なスペックとそれに近い製品</span>がわかるはずです。<br>
-                私がグラフィックボード選びで参考にしているサイトを紹介します。
+                調べたグラフィックボードの名前を下記のサイトで照らし合わせて、<br>
+                <span>必要なスペックとそれに近い製品</span>を確認します。<br>
+                
               </p>
               <div class="external">
                 <%= link_to "参考：GPU性能比較表 |PC自由帳", "https://pcfreebook.com/article/459993300.html",
@@ -633,7 +592,7 @@
               </p>
               <p>
                 グラフィックボードを使用する環境では、<span>CPUとグラフィックボードのバランス</span>が大事です。<br>
-                あくまでも参考ですが、下記のようなサイトで簡単にボトルネックを調べることができます。
+                下記のようなサイトで簡単にボトルネックを調べることができます。
               </p>
               <div class="external">
                 <%= link_to "参考：ボトルネックチェッカー", "https://bablishe.com/cpu-gpu-bottleneck-checker/#bottle_neck_checker",
@@ -654,7 +613,7 @@
             <div class="text">
               <p>
                 大きいサイズのグラフィックボードでは、PCケースに入らないことがあります。<br>
-                多くのPCケースには<span>対応するグラフィックボードの長さが記載されています。</span><br>
+                多くのPCケースには<span class="underline">対応するグラフィックボードの長さが記載されています！</span><br>
                 グラフィックボード<span>取付位置の下のPCIeスロットが使えなくなる</span>こともよくあります。
               </p>
             </div>
@@ -666,7 +625,7 @@
                 多くのグラフィックボードで、電源ユニットからの補助電源が必要になります。<br>
                 補助電源(PCIeコネクタ)には<span>6ピン</span>と<span>8ピン(6+2ピン)</span>があります。
               </p>
-              <p class="underline">電源ユニットに必要な補助電源(PCIeコネクタ)があるか確認しましょう。</p>
+              <p class="underline">電源ユニットに必要な補助電源(PCIeコネクタ)があるか確認しましょう！</p>
             </div>
             <div class="point-title">
               <h4>3.映像出力端子</h4>
@@ -752,9 +711,8 @@
             </div>
             <div class="text">
               <p><span>要求するメモリ容量は年々増加している</span>ため、長期利用を考えている場合は<span>多め</span>に買っておくと安心です。</p>
-              <p>現在ほとんどのマザーボード(メモリを載せる基板)では<span>メモリ2枚セットで最大パフォーマンスを発揮できる</span>ようになっています。メモリを買うときは2枚セットで買うようにしましょう。</p>
-              <p class="underline">例）必要容量が16GBなら8GBメモリ2枚セットを買いましょう。</p>
-              <p class="gray">ハイエンドモデルでは4枚セットで性能を発揮するタイプもあります。</p>
+              <p>現在ほとんどのマザーボード(メモリを載せる基板)では<span>メモリ2枚セットで最大パフォーマンスを発揮できる</span>ようになっています。</p>
+              <p class="underline">必要容量が16GBなら8GBメモリ2枚、必要容量が32GBなら16GBメモリ2枚を買いましょう！</p>
             </div>
           </div>
           
@@ -773,8 +731,8 @@
                 メモリインターフェイスとはメモリ形状のことです。<br>
                 主に<span>DIMM</span>と<span>S.O.DIMM</span>と呼ばれる2種類があります。
               </p>
-              <p>「S.O.DIMM」はノートパソコン用</p>
-              <p class="underline"><span>「DIMM」はデスクトップパソコン用</span>　←こっちを選ぼう！</p>
+              <p class="underline"><span>デスクトップパソコン用の「DIMM」</span>　←こっちを選ぼう！</p>
+              <p>ノートパソコン用の「S.O.DIMM」</p>
             </div>
             
             <div class="point-title">
@@ -782,7 +740,7 @@
             </div>
             <div class="text">
               <p>メモリ規格はCPUでいう世代のようなもので、<span>マザーボードの対応が必須</span>になります。</p>
-              <p class="underline">少し前までは<span>DRR4一択</span>でしたが、最新の「DDR5」が発売されたため徐々に移行していくと思われます。</p>
+              <p class="underline">少し前までは<span>DRR4一択</span>でしたが、最新の「DDR5」が発売されたため徐々に移行していくと思われます！</p>
               <p>暫くの間は市場にDDR4とDDR5が混在することになるため、対応メモリに注意して選びましょう。</p>
             </div>
             
@@ -911,7 +869,10 @@
               <p>上記のような特徴から、</p>
               <p class="bold">・「M.2 SSD」「2.5インチSSD」はOS、アプリ、ゲームの保存</p>
               <p class="bold">・「HDD」は大量の動画、音楽、画像の保存</p>
-              <p>に適しているといえます。</p>
+              <p>
+                に適しているといえます。<br>
+                <span class="underline">ただし「M.2 SSD」は、「2.5インチSSD」と比べて選び方が難しく、体感速度はあまり変わらないためおすすめしません！</span>
+              </p>
             </div>
             <div class="text">
               <p class="bold">ストレージ構成例</p>
@@ -924,22 +885,22 @@
               <div>
                 <ul>
                   <span class="bold">ゲーム用</span>
-                  <li>「M.2 SSD」500GB + 「HDD」1TB</li>
+                  <li>「2.5インチSSD」500GB + 「HDD」1TB</li>
                   <li>「2.5インチSSD」1TB</li>
                 </ul>
               </div>
               <div>
                 <ul>
                   <span class="bold">動画・画像編集用</span>
-                  <li>「M.2 SSD」500GB + 「2.5インチSSD」2TB</li>
-                  <li>「M.2 SSD」1TB + 「HDD」2TB</li>
+                  <li>「2.5インチSSD」4TB</li>
+                  <li>「2.5インチSSD」1TB + 「HDD」3TB</li>
                 </ul>
               </div>
             </div>
             <div class="text">
               <p>「2.5インチSSD」「M.2 SSD」は<span>NANDタイプ</span>で分けられ、主に<span>SLC、MLC、TLC、QLC</span>の4種類あります。</p>
               <p><%= image_tag 'ssd-nand-type.png', width: '100%', height: '100%', alt: "SSD NANDタイプ" %></p>
-              <p class="underline">一般的な使い方なら<span>TLCタイプ</span>を選べばOKです。</p>
+              <p class="underline">一般的な使い方なら<span>TLCタイプ</span>を選べばOKです！</p>
               <p>NANDタイプに<span>「3D」の表記があるものは、信頼性UPモデル</span>と思っておけば大丈夫です。</p>
             </div>
           </div>
@@ -955,14 +916,15 @@
             </div>
             <div class="text">
               <p>規格サイズはHDDの種類で、主に<span>3.5インチ、2.5インチ</span>があります。</p>
-              <p class="underline"><span>デスクトップパソコン用は「3.5インチ」のHDD</span>なので、他を買わないように注意しましょう。</p>
+              <p class="underline"><span>デスクトップパソコン用の「3.5インチ」</span>←こっちを選ぼう！</p>
+              <p>ノートパソコン、CS機用の「2.5インチ」</p>
             </div>
             <div class="point-title">
               <h4>2.接続インターフェイス</h4>
             </div>
             <div class="text">
               <P>接続インターフェイスは、HDDとマザーボードを接続する方法のことです。</P>
-              <p class="underline">HDDは、2.5インチSSDと同じく<span>Serial ATA 6Gb/s (SATA 3.0)</span>一択です。</p>
+              <p class="underline">HDDは、2.5インチSSDと同じく<span>Serial ATA 6Gb/s (SATA 3.0)</span>一択です！</p>
             </div>
           </div>
           
@@ -1000,8 +962,8 @@
             </div>
             <div class="text">
               <p>
-                規格サイズはSSDの種類で、「2.5インチ」と「M.2」があります。<br>
-                ここでは「2.5インチ」のみ説明します。「M.2」に関してはさらに細かく分かれるため、次で説明します。
+                規格サイズはSSDの種類で、<span>「2.5インチ」</span>と「M.2」があります。<br>
+                「M.2」に関してはさらに細かく分かれます。
               </p>
             </div>
             <div class="point-title">
@@ -1009,7 +971,7 @@
             </div>
             <div class="text">
               <P>接続インターフェイスは、2.5インチSSDとマザーボードを接続する方法のことです。</P>
-              <P class="underline">2.5インチSSDの接続インターフェイスは、HDDと同じく<span>Serial ATA 6Gb/s (SATA 3.0)</span>一択です。</P>
+              <P class="underline">2.5インチSSDの接続インターフェイスは、HDDと同じく<span>Serial ATA 6Gb/s (SATA 3.0)</span>一択です！</P>
             </div>
           </div>
           
@@ -1046,13 +1008,13 @@
               <h4>1.規格サイズ</h4>
             </div>
             <div class="text">
-              <p>規格サイズはSSDの種類で、「2.5インチ」と「M.2」があります。</p>
+              <p>規格サイズはSSDの種類で、「2.5インチ」と<span>「M.2」</span>があります。</p>
               <p>
                 M.2 SSDは、<span>Type2242</span>、<span>Type2260</span>、<span>Type2280</span>、<span>Type22110</span>の4タイプに分かれ、<br>
                 数字がそのままM.2 SSDのサイズを表しています。<span class="gray">Type2280 では 22x80(mm)</span><br>
                 現在ほとんどのM.2 SSDで「Type2280」が採用されています。
               </p>
-              <p class="underline"><span>「Type2280」のM.2 SSD</span>を選べば、マザーボードでもほとんどが対応しています。</p>
+              <p class="underline"><span>「Type2280」のM.2 SSD</span>を選べば、マザーボードでもほとんどが対応しています！</p>
             </div>
             <div class="point-title">
               <h4>2.通信規格</h4>
@@ -1060,13 +1022,12 @@
             <div class="text">
               <p>
                 M.2 SSDの通信規格には、<span>Serial ATA 6Gb/s (SATA3.0)</span>と<span>NVMe(PCIe3.0、PCIe4.0)</span>があります。<br>
-                <span class="gray">※接続インターフェイスとして、通信規格が表記されていることもあります。<br>
-                　厳密には接続インターフェイスは「M.2」です。</span>
+                <span class="gray">※接続インターフェイスとして、通信規格が表記されている場合もあります。<br>
               </p>
               <p>「Serial ATA 6Gb/s」のM.2 SSDは、2.5インチSSDと転送速度が同じです。</p>
               <p class="underline">
-                せっかくM.2 SSDを搭載するなら、転送速度の速い<span>「NVMe(PCIe3.0、PCIe4.0)」</span>を選びましょう。<br>
-                NVMeは<span>「PCIe3.0」と「PCIe4.0」で互換性がある</span>ので、どちらでも問題なく使用できます。
+                せっかくM.2 SSDを搭載するなら、転送速度の速い<span>「NVMe(PCIe3.0、PCIe4.0)」</span>を選びましょう！<br>
+                NVMeは<span>「PCIe3.0」と「PCIe4.0」で互換性がある</span>ので、どちらでも問題なく使用できます！
               </p>
               <p>性能を十分に発揮したい場合は、「CPU」「マザーボード」「M.2 SSD」全てで「PCIe4.0」対応製品を選びましょう。</p>
             </div>
@@ -1120,10 +1081,10 @@
                 ・冷却性能が良い（エアーフロー、ケースファンの数）<br>
                 ・パーツが干渉しない<br>
                 ・組み立てが容易</span><br>
-                といったメリットもあります。
+                といったメリットがあります。
               </p>
-              <p class="underline">比較的大きく、もっとも標準的なサイズの<span>「ATX」対応のPCケース</span>がおすすめです。</p>
-              <p class="bold gray">誤ってマザーボード、電源ユニットが付属したものを買わないように注意しましょう。</p>
+              <p class="underline">比較的大きく、もっとも標準的なサイズの<span>「ATX」対応のPCケース</span>がおすすめです！</p>
+              <p class="red">誤ってマザーボード、電源ユニットが付属したものを買わないように注意しましょう。</p>
             </div>
           </div>
           
@@ -1137,7 +1098,7 @@
               <h4>1.パーツ対応</h4>
             </div>
             <div class="text">
-              <p class="underline">すべてのパーツがきちんとPCケースに収まる必要があります。</p>
+              <p class="underline">すべてのパーツがきちんとPCケースに収まる必要があります！</p>
               <p class="bold">PCケース選定の確認事項一覧</p>
               <table>
                 <thead>
@@ -1233,7 +1194,7 @@
                 PCケースは、基本的に<span>「ATX」対応であれば「MicroATX」「Mini-ATX」ともに対応</span>しています。<br>
                 サイズが大きければ、<span>拡張性が高くなります。(メモリスロット、SATAポート、PCIeスロットの数)</span>
               </p>
-              <p class="underline">比較的大きく、もっとも標準的なサイズの<span>「ATX」のマザーボード</span>がおすすめです。</p>
+              <p class="underline">比較的大きく、もっとも標準的なサイズの<span>「ATX」のマザーボード</span>がおすすめです！</p>
               <p>基本的に<span>PCケースの対応マザーボードサイズ(フォームファクタ)</span>に合わせましょう。</p>
             </div>
           </div>
@@ -1254,8 +1215,8 @@
                 種類によって<span>対応するCPUの世代、SATAポートなど</span>が変わってきます。
               </p>
               <p class="bold underline">
-                CPUに対応したチップセットを搭載したマザーボードを選ぶ必要があります。<br>
-                ほとんどの場合、製品名にチップセット名が含まれています。
+                CPUに対応したチップセットを搭載したマザーボードを選ぶ必要があります！<br>
+                ほとんどの場合、製品名にチップセット名が含まれています！
               </p>
             </div>
             <div class="text">
@@ -1364,13 +1325,13 @@
             </div>
             <div class="text">
               <p>マザーボードには、CPUの補助電源用コネクタの<span>4ピン</span>もしくは<span>8ピン(4+4ピン)</span>があります。</p>
-              <p class="underline">電源ユニットに、必要な補助電源(CPU用コネクタ)があるか確認しましょう。</p>
+              <p class="underline">電源ユニットに、必要な補助電源(CPU用コネクタ)があるか確認しましょう！</p>
             </div>
             <div class="point-title">
               <h4>3.パーツ対応</h4>
             </div>
             <div class="text">
-              <p class="underline">マザーボードが下記のパーツに対応している必要があります。</p>
+              <p class="underline">マザーボードが下記のパーツに対応している必要があります！</p>
               <p class="bold">マザーボード選定の確認事項一覧</p>
               <table>
                 <thead>
@@ -1406,7 +1367,7 @@
                   </tr>
                   <tr>
                     <td>電源ユニット</td>
-                    <td>補助電源(4ピン、8ピン)</td>
+                    <td>補助電源(4ピン、8ピン(4+4ピン))</td>
                   </tr>
                 </tbody>
               </table>
@@ -1465,7 +1426,7 @@
             <div class="text">
               <p>
                 電源ユニットは、<span>50%負荷の時に最高効率で、長持ちもする</span>ように作られています。<br>
-                <span class="underline">消費電力の2倍の電源容量がおすすめです。</span><br>
+                <span class="underline">消費電力の2倍の電源容量がおすすめです！</span><br>
                 ドスパラの電源容量計算機を使えば、パーツを選ぶだけで必要な電源容量が分かります。
               </p>
               <div class="external">
@@ -1481,8 +1442,8 @@
               </p>
               <p><%= image_tag '80plus.png', width: '100%', height: '100%', alt: "80PLUS認証" %></p>
               <p>
-                それなりに故障しやすいパーツで、使い方や個体差もあるため、あくまで目安ですが<br>
-                <span class="bold underline">「Gold」以上を選ぶと安心かと思います。</span>
+                それなりに故障しやすいパーツで、使い方や個体差もあるためあくまで目安ですが<br>
+                <span class="bold underline">「Gold」以上をおすすめします！</span>
               </p>
             </div>
           </div>
@@ -1503,7 +1464,7 @@
               </p>
               <p class="underline">
                 <span>PCケースで対応する電源規格</span>と<br>
-                <span>対応する電源ユニットの奥行き</span>を確認して選びましょう。
+                <span>対応する電源ユニットの奥行き</span>を確認して選びましょう！
               </p>
             </div>
             <div class="point-title">
@@ -1511,11 +1472,11 @@
             </div>
             <div class="text">
               <p>
-                <span>CPU用コネクタの4ピンもしくは8ピン</span>と<br>
-                補助電源が必要なグラフィックボードを搭載する場合、<span>PCIeコネクタの6ピンもしくは8ピン</span>が必要になります。
+                <span>CPU用コネクタの4ピンもしくは8ピン(4+4ピン)</span>と<br>
+                補助電源が必要なグラフィックボードを搭載する場合、<span>PCIeコネクタの6ピンもしくは8ピン(6+2ピン)</span>が必要になります。
               </p>
               <p>
-                基本的には必要なケーブルがあるか確認しますが、手っ取り早い方法として<br>
+                基本的にはケーブルの確認が必要ですが、手っ取り早い方法として<br>
                 <span class="underline">CPU用コネクタは、4+4ピン<br>
                 PCIeコネクタは、6+2ピン (2本以上)</span><br>
                 の製品を選べば両方に対応できるため安心です。
@@ -1577,7 +1538,7 @@
               <div class="text">
                 <p>エディションには<span>Home</span>と<span>Pro</span>があります。</p>
                 <p>「Pro」には<span>企業向けの追加機能</span>が備わっています。</p>
-                <p>追加機能が必要な人のみ「Pro」を買うようにしましょう。</p>
+                <p class="underline">追加機能が必要な人のみ「Pro」を買うようにしましょう！</p>
               </div>
               
               <div class="point-title">
@@ -1627,6 +1588,7 @@
                     </tr>
                   </tbody>
                 </table>
+                <p class="underline">DSP版は制限や手間がかかるため、<span>パッケージ版をおすすめします！</span></p>
               </div>
               
               <div class="point-title">
@@ -1634,7 +1596,7 @@
               </div>
               <div class="text">
                 <p>パッケージ版ではインストール時、DSP版では購入時に<span>32bit版</span>、<span>64bit版</span>どちらか選択します。</p>
-                <p>32bit版では下記のような制限があるため、<span>基本的に64bit版でOK</span>です。</p>
+                <p class="underline">32bit版では下記のような制限があるため、<span>基本的に64bit版でOK</span>です！</p>
                 <ul>
                   <li>メモリが最大4GBまで</li>
                   <li>Windowsをインストールするディスク容量が最大2TBまで</li>
@@ -1686,7 +1648,7 @@
               は揃えるようにしましょう！
             </p>
             <p>
-              組み立てに際して、<span>プラスドライバー</span>、<span>静電気防止手袋</span>、<span>ラジオペンチ</span>、<span>ライト</span>を用意しておくとスムーズです。
+              組み立ての際に、<span>プラスドライバー</span>、<span>静電気防止手袋</span>、<span>ラジオペンチ</span>、<span>ライト</span>を用意しておくと作業がスムーズになります。
             </p>
           </div>
           <table class="table">
@@ -1721,8 +1683,16 @@
             <h2>まとめ</h2>
           </div>
           <div class="text">
-            <p>自作パソコンに挑戦するにあたり、パーツ選びで躓く人が多いのではないかと思い、自分なりにまとめてみました。</p>
-            <p>特に初めての人に向けた内容で、省いている情報もかなり多くあるので、それぞれのパーツについて深く調べてみるのも面白いと思います。</p>
+            <p>自作パソコンに挑戦するにあたり、パーツ選びでつまづく人が多いのではないかと思い、自分なりにまとめてみました。</p>
+            <div class="external">
+              <%= link_to "参考：【価格.com】パソコン", "https://kakaku.com/pc/", target: :_blank, rel: "noopener noreferrer" %>
+            </div>
+            <p class="bold">
+              具体的なパーツ選びの際に、「
+              <%= link_to "価格ドットコム", "https://kakaku.com/pc/", target: :_blank, rel: "noopener noreferrer" %>
+              」の絞り込み機能がとても便利なのでおすすめです。
+            </p>
+            <p>特に初めての人に向けた内容で、省いている情報もかなりあるので、それぞれのパーツについて深く調べてみるのも面白いと思います。</p>
             <p class="bold">
               下のボタンから自作パソコンの構成パーツを保存できます。<br>
               お見積もりなどご自由にお使いください。
