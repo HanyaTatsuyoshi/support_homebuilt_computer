@@ -3,6 +3,11 @@
 <div class="row" id="customs-new">
   <article class="col-md-8 col-md-offset-2">
     <h1>自作PCの作成</h1>
+    <% if user_signed_in? %>
+      <p class="bold gray">※空欄のままでも保存できます。保存した構成は後から編集できます。</p>
+    <% else %>
+      <p class="bold red">ログインすることで、自作パソコンの構成を保存していつでも確認できます！</p>
+    <% end %>
     <%= form_with(model: @custom, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
       <%= f.label "構成名" %>

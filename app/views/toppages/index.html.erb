@@ -287,22 +287,25 @@
               </details>
             </div>
           </div>
-          <div class="topic">
-            <h2>自作パソコンの選んだパーツを保存</h2>
-          </div>
-          <div class="text">
-            <p>
-              <%= link_to "アカウント登録", new_user_registration_path %>
-              することで自作パソコンの構成パーツを保存していつでも確認できます。<br>
-              お見積もりなどご自由にお役立てください。
-            </p>
-            <p class="center"><%= link_to "アカウント登録", new_user_registration_path, class: "outline" %></p>
-            <p>
-              <%= link_to "ログイン", new_user_session_path %>
-              した状態で下の欄に入力して、ページ最下部の「確認画面へ進む」から保存ができます。
-            </p>
-            <p class="gray">※空欄のままでも保存できます。保存した構成は後から編集できます。</p>
-          </div>
+          
+          <% unless user_signed_in? %>
+            <div class="topic">
+              <h2>自作パソコンの選んだパーツを保存</h2>
+            </div>
+            <div class="text">
+              <p>
+                <%= link_to "アカウント登録", new_user_registration_path %>
+                することで、自作パソコンの構成パーツを保存していつでも確認できます。<br>
+                お見積もりなどご自由にお役立てください。
+              </p>
+              <p class="center"><%= link_to "アカウント登録", new_user_registration_path, class: "outline" %></p>
+              <p>
+                <%= link_to "ログイン", new_user_session_path %>
+                した状態で下の欄に入力して、ページ最下部の「確認画面へ進む」から保存ができます。
+              </p>
+              <p class="gray">※空欄のままでも保存できます。保存した構成は後から編集できます。</p>
+            </div>
+          <% end %>
           
           <table class="table">
             <thead>
@@ -1233,18 +1236,6 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td>第10世代<br>Xモデル<br>(末尾がX,Xe)</td>
-                        <td>X299</td>
-                      </tr>
-                      <tr>
-                        <td>第9世代<br>Xモデル</td>
-                        <td>X299</td>
-                      </tr>
-                      <tr>
-                        <td>第7世代<br>Xモデル</td>
-                        <td>X299</td>
-                      </tr>
-                      <tr>
                         <td>第12世代</td>
                         <td>Z690</td>
                       </tr>
@@ -1264,6 +1255,18 @@
                       <tr>
                         <td>第8世代</td>
                         <td>Z390、Z370、H370、B365、B360、H310</td>
+                      </tr>
+                      <tr>
+                        <td>第10世代<br>Xモデル<br>(末尾がX,Xe)</td>
+                        <td>X299</td>
+                      </tr>
+                      <tr>
+                        <td>第9世代<br>Xモデル</td>
+                        <td>X299</td>
+                      </tr>
+                      <tr>
+                        <td>第7世代<br>Xモデル</td>
+                        <td>X299</td>
                       </tr>
                     </tbody>
                   </table>
