@@ -39,7 +39,7 @@
           <td><%= @custom.gpu %></td>
           <td><%= raw Rinku.auto_link(h(@custom.gpu_url), :all,
                   'target="_blank" rel="noopener noreferrer"') %></td>
-          <td><%= number_to_currency(@custom.cpu_price, :locale => 'ja') %></td>
+          <td><%= number_to_currency(@custom.gpu_price, :locale => 'ja') %></td>
         </tr>
         <tr>
           <th scope="row">メモリ</th>
@@ -95,7 +95,7 @@
           <td><%= @custom.os %></td>
           <td><%= raw Rinku.auto_link(h(@custom.os_url), :all,
                   'target="_blank" rel="noopener noreferrer"') %></td>
-          <td><%= number_to_currency(@custom.cpu_price, :locale => 'ja') %></td>
+          <td><%= number_to_currency(@custom.os_price, :locale => 'ja') %></td>
         </tr>
         <tr>
           <th scope="row">周辺機器</th>
