@@ -20,9 +20,9 @@
 * Heroku
   * PostgreSQL
   * Puma
- * AWS
+* AWS
   * EC2(開発環境)
   * S3(sitemap)
- * お名前ドットコム
+* お名前ドットコム
   * お名前メール
- * Git
+* Git
